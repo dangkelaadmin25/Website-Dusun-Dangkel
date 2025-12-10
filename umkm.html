@@ -1,25 +1,108 @@
 <!doctype html>
 
-    <!-- Navigation Dots -->
-    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 10;"><button class="carousel-dot active" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: white;"></button> <button class="carousel-dot" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: transparent;"></button> <button class="carousel-dot" data-slide="3" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: transparent;"></button>
-    </div><!-- Navigation Bar -->
-    <nav style="position: absolute; top: 0; left: 0; right: 0; background: rgba(12, 179, 230, 0.2); backdrop-filter: blur(10px); z-index: 20; padding: 20px 40px;">
-     <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;"><!-- Logo & Name -->
-      <div style="display: flex; align-items: center; gap: 12px;">
-       <svg width="40" height="40" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="28" fill="white" opacity="0.3" /> <path d="M20 35L30 20L40 35H35V45H25V35H20Z" fill="white" /> <rect x="32" y="38" width="3" height="7" fill="#E0E0E0" /> <circle cx="30" cy="15" r="3" fill="#FDD835" />
-       </svg>
-       <div>
+   <!-- Navigation Bar -->
+<nav style="position: absolute; top: 0; left: 0; right: 0; background: rgba(12, 179, 230, 0.2); backdrop-filter: blur(10px); z-index: 20; padding: 20px 40px;">
+  <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+
+    <!-- Logo & Name -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" fill="white" opacity="0.3" />
+        <path d="M20 35L30 20L40 35H35V45H25V35H20Z" fill="white" />
+        <rect x="32" y="38" width="3" height="7" fill="#E0E0E0" />
+        <circle cx="30" cy="15" r="3" fill="#FDD835" />
+      </svg>
+
+      <div>
         <h1 id="villageName" style="font-size: 18px; font-weight: bold; color: white; margin: 0; line-height: 1.2;">Dusun Dangkel</h1>
         <p id="tagline" style="font-size: 11px; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.2;">Bersama Membangun Desa</p>
-       </div>
-      </div><!-- Navigation Links -->
-      <div id="navMenu" style="display: flex; gap: 30px; align-items: center;"><a href="https://www.online-pajak.com/invoice-financing/definisi-umkm/" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">UMKM</a> <a href="#peta" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Peta</a> <a href="#organisasi" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Organisasi</a> <a href="#profil" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Profil Desa</a> <a href="#jadwal" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Jadwal</a>
-      </div><!-- Mobile Menu Button --> <button id="mobileMenuBtn" style="display: none; background: none; border: none; cursor: pointer;">
-       <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="6" width="30" height="3" rx="1.5" fill="white" /> <rect y="13.5" width="30" height="3" rx="1.5" fill="white" /> <rect y="21" width="30" height="3" rx="1.5" fill="white" />
-       </svg></button>
-     </div><!-- Mobile Menu Dropdown -->
-     <div id="mobileMenuDropdown" style="display: none; flex-direction: column; gap: 15px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);"><a href="#umkm" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">UMKM</a> <a href="#peta" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">Peta</a> <a href="#organisasi" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">Organisasi</a> <a href="#profil" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">Profil Desa</a> <a href="#jadwal" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">Jadwal</a>
-     </div>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <div id="navMenu" style="display: flex; gap: 30px; align-items: center;">
+
+      <!--  Beranda -->
+      <a href="index.html" class="nav-link"
+        style="color: white; text-decoration: none; font-weight: 500; font-size: 15px;
+        transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">
+        Beranda
+      </a>
+
+      <a href="https://www.online-pajak.com/invoice-financing/definisi-umkm/" class="nav-link"
+        style="color: white; text-decoration: none; font-weight: 500; font-size: 15px;
+        transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">
+        UMKM
+      </a>
+
+      <a href="#peta" class="nav-link"
+        style="color: white; text-decoration: none; font-weight: 500; font-size: 15px;
+        transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">
+        Peta
+      </a>
+
+      <a href="#organisasi" class="nav-link"
+        style="color: white; text-decoration: none; font-weight: 500; font-size: 15px;
+        transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">
+        Organisasi
+      </a>
+
+      <a href="#profil" class="nav-link"
+        style="color: white; text-decoration: none; font-weight: 500; font-size: 15px;
+        transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">
+        Profil Desa
+      </a>
+
+      <a href="#jadwal" class="nav-link"
+        style="color: white; text-decoration: none; font-weight: 500; font-size: 15px;
+        transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">
+        Jadwal
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobileMenuBtn" style="display: none; background: none; border: none; cursor: pointer;">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="6" width="30" height="3" rx="1.5" fill="white" />
+        <rect y="13.5" width="30" height="3" rx="1.5" fill="white" />
+        <rect y="21" width="30" height="3" rx="1.5" fill="white" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div id="mobileMenuDropdown"
+       style="display: none; flex-direction: column; gap: 15px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+
+    <a href="index.html" class="nav-link-mobile"
+       style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">
+      Beranda
+    </a>
+
+    <a href="#umkm" class="nav-link-mobile"
+       style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">
+      UMKM
+    </a>
+
+    <a href="#peta" class="nav-link-mobile"
+       style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">
+      Peta
+    </a>
+
+    <a href="#organisasi" class="nav-link-mobile"
+       style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">
+      Organisasi
+    </a>
+
+    <a href="#profil" class="nav-link-mobile"
+       style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">
+      Profil Desa
+    </a>
+
+    <a href="#jadwal" class="nav-link-mobile"
+       style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">
+      Jadwal
+    </a>
     </nav>
 <html lang="id" class="h-full">
   <br>
@@ -468,6 +551,7 @@
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ab544dcc5d114a6',t:'MTc2NTI5MTM0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
