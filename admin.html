@@ -1,63 +1,109 @@
-<h2>Admin Agenda</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Agenda Dusun</title>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; }
+    button { padding: 10px 20px; background: #2196F3; color: #fff; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
 
-<div id="loginBox">
-  <input id="password" type="password" placeholder="Password Admin">
-  <button onclick="login()">Login</button>
+<h2>Login Admin</h2>
+
+<div id="login">
+  <input type="password" id="pass" placeholder="Masukkan password admin">
+  <button onclick="login()">Masuk</button>
 </div>
 
 <div id="editor" style="display:none;">
-  <h3>Edit Agenda</h3>
-  <textarea id="agendaText" style="width:100%;height:200px;"></textarea>
-  <button onclick="saveAgenda()">Simpan Perubahan</button>
+  <h2>Edit Agenda Dusun</h2>
+
+  <label>Agenda 1 - Tanggal</label>
+  <input id="agenda1Date">
+
+  <label>Agenda 1 - Judul</label>
+  <input id="agenda1Title">
+
+  <label>Agenda 2 - Tanggal</label>
+  <input id="agenda2Date">
+
+  <label>Agenda 2 - Judul</label>
+  <input id="agenda2Title">
+
+  <label>Agenda 3 - Tanggal</label>
+  <input id="agenda3Date">
+
+  <label>Agenda 3 - Judul</label>
+  <input id="agenda3Title">
+
+  <button onclick="save()">Simpan Agenda</button>
 </div>
 
 <script>
-const ADMIN_PASSWORD = "gantipasswordmu";
+const ADMIN_PASSWORD = "gantipassword"; // ganti ini
 
 function login() {
-    const p = document.getElementById("password").value;
-    if (p === ADMIN_PASSWORD) {
-        document.getElementById("loginBox").style.display = "none";
-        document.getElementById("editor").style.display = "block";
-        loadAgenda();
-    } else {
-        alert("Password salah!");
-    }
+  if (document.getElementById("pass").value === ADMIN_PASSWORD) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("editor").style.display = "block";
+    loadCurrentValues();
+  } else {
+    alert("Password salah!");
+  }
 }
 
-function loadAgenda() {
-    fetch("agenda.json")
-        .then(res => res.text())
-        .then(text => document.getElementById("agendaText").value = text);
+// Muat nilai dari index.html (dibaca langsung)
+function loadCurrentValues() {
+  fetch("index.html")
+      .then(res => res.text())
+      .then(html => {
+          document.getElementById("agenda1Date").value = html.match(/id="agenda1Date"[^>]*>(.*?)</)[1];
+          document.getElementById("agenda1Title").value = html.match(/id="agenda1Title"[^>]*>(.*?)</)[1];
+
+          document.getElementById("agenda2Date").value = html.match(/id="agenda2Date"[^>]*>(.*?)</)[1];
+          document.getElementById("agenda2Title").value = html.match(/id="agenda2Title"[^>]*>(.*?)</)[1];
+
+          document.getElementById("agenda3Date").value = html.match(/id="agenda3Date"[^>]*>(.*?)</)[1];
+          document.getElementById("agenda3Title").value = html.match(/id="agenda3Title"[^>]*>(.*?)</)[1];
+      });
 }
 
-async function saveAgenda() {
-    const newContent = document.getElementById("agendaText").value;
+// Simpan perubahan ke GitHub
+async function save() {
+  const repoOwner = "USERNAME_GITHUB_MU";
+  const repoName = "NAMA_REPO";
+  const filePath = "index.html";
+  const token = "GITHUB_TOKEN_MU";
 
-    const repoOwner = "username_githubmu";
-    const repoName = "nama_repo";
-    const filePath = "agenda.json";
-    const token = "TOKEN_GITHUB_MU";
+  let newIndex = await fetch("index.html").then(r => r.text());
 
-    // Ambil SHA file
-    const res = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`);
-    const fileData = await res.json();
+  newIndex = newIndex
+    .replace(/id="agenda1Date"[^>]*>.*?</, `id="agenda1Date">${agenda1Date.value}<`)
+    .replace(/id="agenda1Title"[^>]*>.*?</, `id="agenda1Title">${agenda1Title.value}<`)
+    .replace(/id="agenda2Date"[^>]*>.*?</, `id="agenda2Date">${agenda2Date.value}<`)
+    .replace(/id="agenda2Title"[^>]*>.*?</, `id="agenda2Title">${agenda2Title.value}<`)
+    .replace(/id="agenda3Date"[^>]*>.*?</, `id="agenda3Date">${agenda3Date.value}<`)
+    .replace(/id="agenda3Title"[^>]*>.*?</, `id="agenda3Title">${agenda3Title.value}<`);
 
-    // Kirim update
-    await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
-        method: "PUT",
-        headers: {
-            "Authorization": `token ${token}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            message: "Update agenda",
-            content: btoa(unescape(encodeURIComponent(newContent))),
-            sha: fileData.sha
-        })
-    });
+  const res = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`);
+  const fileData = await res.json();
 
-    alert("Agenda berhasil diperbarui!");
+  await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+    method: "PUT",
+    headers: { "Authorization": `token ${token}` },
+    body: JSON.stringify({
+      message: "Update agenda",
+      content: btoa(unescape(encodeURIComponent(newIndex))),
+      sha: fileData.sha
+    })
+  });
+
+  alert("Agenda berhasil diperbarui!");
 }
 </script>
 
+</body>
+</html>
