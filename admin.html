@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Admin Agenda Dusun</title>
   <meta charset="UTF-8">
+  <title>Admin Agenda Dusun</title>
   <style>
     body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
     input, textarea { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; }
     button { padding: 10px 20px; background: #2196F3; color: #fff; border: none; cursor: pointer; }
+    h2 { margin-bottom: 20px; }
   </style>
 </head>
 <body>
@@ -43,10 +44,12 @@
 </div>
 
 <script>
-const ADMIN_PASSWORD = "gantipassword"; // ganti ini
+// ------------ LOGIN SEDERHANA (GANTI PASSWORDNYA) --------------
+const ADMIN_PASSWORD = "dangkelyes25"; // GANTI MENJADI PASSWORD ANDA
 
 function login() {
-  if (document.getElementById("pass").value === ADMIN_PASSWORD) {
+  const p = document.getElementById("pass").value;
+  if (p === ADMIN_PASSWORD) {
     document.getElementById("login").style.display = "none";
     document.getElementById("editor").style.display = "block";
     loadCurrentValues();
@@ -55,7 +58,7 @@ function login() {
   }
 }
 
-// Muat nilai dari index.html (dibaca langsung)
+// ------------ MUAT NILAI AGENDA DARI INDEX.HTML --------------
 function loadCurrentValues() {
   fetch("index.html")
       .then(res => res.text())
@@ -71,15 +74,18 @@ function loadCurrentValues() {
       });
 }
 
-// Simpan perubahan ke GitHub
+// ------------ SIMPAN PERUBAHAN KE GITHUB --------------
 async function save() {
-  const repoOwner = "USERNAME_GITHUB_MU";
-  const repoName = "NAMA_REPO";
+  const repoOwner = "dangkelaadmin25";
+  const repoName = "Website-Dusun-Dangkel";
   const filePath = "index.html";
-  const token = "GITHUB_TOKEN_MU";
 
+  const token = "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"; // PENTING: Isi manual, jangan bagikan!
+
+  // Ambil file index.html terbaru
   let newIndex = await fetch("index.html").then(r => r.text());
 
+  // Ganti nilai agenda
   newIndex = newIndex
     .replace(/id="agenda1Date"[^>]*>.*?</, `id="agenda1Date">${agenda1Date.value}<`)
     .replace(/id="agenda1Title"[^>]*>.*?</, `id="agenda1Title">${agenda1Title.value}<`)
@@ -88,9 +94,11 @@ async function save() {
     .replace(/id="agenda3Date"[^>]*>.*?</, `id="agenda3Date">${agenda3Date.value}<`)
     .replace(/id="agenda3Title"[^>]*>.*?</, `id="agenda3Title">${agenda3Title.value}<`);
 
+  // Ambil SHA file (wajib untuk update)
   const res = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`);
   const fileData = await res.json();
 
+  // Kirim update ke GitHub
   await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
     method: "PUT",
     headers: { "Authorization": `token ${token}` },
