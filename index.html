@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Dusun</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    .slide-in {
+      animation: slideIn 0.6s ease-out forwards;
+    }
+    
+    .carousel-slide {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    .carousel-slide.active {
+      display: block;
+    }
+    
+    .carousel-dot {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .carousel-dot.active {
+      transform: scale(1.3);
+    }
+    
+    .menu-card {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .menu-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .art-card {
+      transition: all 0.3s ease;
+    }
+    
+    .art-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .org-card {
+      transition: all 0.3s ease;
+    }
+    
+    .org-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-link:hover {
+      border-bottom-color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      #navMenu {
+        display: none !important;
+      }
+      #mobileMenuBtn {
+        display: block !important;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto"><!-- Header dengan Carousel -->
+   <header id="headerCarousel" class="relative" style="height: 500px; overflow: hidden;"><!-- Slide 1 -->
+     <div class="carousel-slide active" data-slide="1" style="height: 100%; position: relative;">
+  
+ <img src="https://i.ibb.co.com/GQ6CSYkk/Whats-App-Image-2025-12-07-at-10-21-05-1.jpg" 
+       style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+  </div>
+     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+      <h2 id="carousel1Title" style="font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 20px;">Keindahan Alam Dusun</h2>
+      <p style="font-size: 20px; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Dikelilingi Pemandangan Hijau yang Asri</p>
+     </div>
+    </div><!-- Slide 2 -->
+    <div class="carousel-slide" data-slide="2" style="height: 100%; position: relative;">
+     <svg width="100%" height="100%" viewbox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice"><rect width="1200" height="500" fill="#2196F3" /> <path d="M0 400C200 380 400 390 600 385C800 380 1000 390 1200 385V500H0V400Z" fill="#42A5F5" /> <rect x="150" y="250" width="120" height="150" fill="#1565C0" /> <rect x="155" y="320" width="30" height="40" fill="#FDD835" /> <rect x="180" y="270" width="35" height="35" fill="#64B5F6" /> <rect x="225" y="270" width="35" height="35" fill="#64B5F6" /> <rect x="400" y="230" width="140" height="170" fill="#0D47A1" /> <rect x="410" y="330" width="35" height="40" fill="#FDD835" /> <rect x="460" y="250" width="40" height="40" fill="#64B5F6" /> <rect x="410" y="250" width="40" height="40" fill="#64B5F6" /> <rect x="700" y="260" width="110" height="140" fill="#1976D2" /> <rect x="710" y="330" width="28" height="35" fill="#FDD835" /> <rect x="750" y="280" width="30" height="30" fill="#64B5F6" /> <rect x="710" y="280" width="30" height="30" fill="#64B5F6" /> <circle cx="900" cy="120" r="60" fill="#FDD835" />
+     </svg>
+      <img src="https://investinindonesia.uk/wp-content/uploads/2024/11/IKM-dan-UMKM.webp"
+       style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+
+     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+      <h2 id="carousel2Title" style="font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 20px;">Kehidupan Masyarakat</h2>
+      <p style="font-size: 20px; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Harmonis dan Penuh Kekeluargaan</p>
+     </div>
+    </div><!-- Slide 3 -->
+    <div class="carousel-slide" data-slide="3" style="height: 100%; position: relative;">
+     <svg width="100%" height="100%" viewbox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice"><rect width="1200" height="500" fill="#FF9800" /> <circle cx="200" cy="250" r="80" fill="#FFB74D" opacity="0.6" /> <circle cx="250" cy="280" r="70" fill="#FFB74D" opacity="0.6" /> <circle cx="300" cy="240" r="75" fill="#FFB74D" opacity="0.6" /> <circle cx="500" cy="270" r="85" fill="#FFB74D" opacity="0.6" /> <circle cx="560" cy="250" r="75" fill="#FFB74D" opacity="0.6" /> <circle cx="620" cy="280" r="70" fill="#FFB74D" opacity="0.6" /> <circle cx="800" cy="260" r="80" fill="#FFB74D" opacity="0.6" /> <circle cx="870" cy="240" r="75" fill="#FFB74D" opacity="0.6" /> <circle cx="940" cy="270" r="70" fill="#FFB74D" opacity="0.6" /> <path d="M0 380C200 360 400 370 600 365C800 360 1000 370 1200 365V500H0V380Z" fill="#F57C00" /> <circle cx="100" cy="100" r="45" fill="#FDD835" />
+     </svg>
+     </svg>
+      <img src="https://i.ibb.co.com/TMP4qWts/Whats-App-Image-2025-12-07-at-15-42-00.jpg"
+       style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+      <h2 id="carousel3Title" style="font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 20px;">Kegiatan Bersama</h2>
+      <p style="font-size: 20px; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Membangun Kebersamaan dan Gotong Royong</p>
+     </div>
+    </div><!-- Navigation Dots -->
+    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 10;"><button class="carousel-dot active" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: white;"></button> <button class="carousel-dot" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: transparent;"></button> <button class="carousel-dot" data-slide="3" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: transparent;"></button>
+    </div><!-- Navigation Bar -->
+    <nav style="position: absolute; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); z-index: 20; padding: 20px 40px;">
+     <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;"><!-- Logo & Name -->
+      <div style="display: flex; align-items: center; gap: 12px;">
+       <svg width="40" height="40" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="28" fill="white" opacity="0.3" /> <path d="M20 35L30 20L40 35H35V45H25V35H20Z" fill="white" /> <rect x="32" y="38" width="3" height="7" fill="#E0E0E0" /> <circle cx="30" cy="15" r="3" fill="#FDD835" />
+       </svg>
+       <div>
+        <h1 id="villageName" style="font-size: 18px; font-weight: bold; color: white; margin: 0; line-height: 1.2;">Dusun Dangkel</h1>
+        <p id="tagline" style="font-size: 11px; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.2;">Bersama Membangun Desa</p>
+       </div>
+      </div><!-- Navigation Links -->
+      <div id="navMenu" style="display: flex; gap: 30px; align-items: center;"><a href="#umkm" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">UMKM</a> <a href="#peta" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Peta</a> <a href="#organisasi" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Organisasi</a> <a href="#profil" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Profil Desa</a> <a href="#jadwal" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Jadwal</a>
+      </div><!-- Mobile Menu Button --> <button id="mobileMenuBtn" style="display: none; background: none; border: none; cursor: pointer;">
+       <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="6" width="30" height="3" rx="1.5" fill="white" /> <rect y="13.5" width="30" height="3" rx="1.5" fill="white" /> <rect y="21" width="30" height="3" rx="1.5" fill="white" />
+       </svg></button>
+     </div><!-- Mobile Menu Dropdown -->
+     <div id="mobileMenuDropdown" style="display: none; flex-direction: column; gap: 15px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);"><a href="#umkm" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">UMKM</a> <a href="#peta" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">Peta</a> <a href="#organisasi" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">Organisasi</a> <a href="#profil" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">Profil Desa</a> <a href="#jadwal" class="nav-link-mobile" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; padding: 10px 0;">Jadwal</a>
+     </div>
+    </nav>
+   </header>
+   <main class="max-w-7xl mx-auto px-6 py-12"><!-- Welcome Section -->
+    <section id="profil" class="mb-16 fade-in">
+     <div id="heroSection" class="rounded-3xl shadow-2xl p-12 text-center">
+      <h2 id="welcomeTitle" class="text-4xl font-bold mb-4">Selamat Datang di Website Dusun Kami</h2>
+      <p id="welcomeMessage" class="text-lg max-w-3xl mx-auto">Kami mengucapkan selamat datang kepada seluruh masyarakat dan para pengunjung website dusun kami. Mari bersama-sama membangun desa yang lebih maju dan sejahtera.</p>
+     </div>
+    </section><!-- Menu Navigasi Utama -->
+    <section id="umkm" class="mb-16">
+     <h2 class="section-title text-3xl font-bold text-center mb-10">Menu Utama</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- UMKM -->
+      <div id="umkmCard" class="menu-card rounded-2xl shadow-xl p-8 text-center">
+       <div class="mb-4">
+       <div class="umkm-slider" style="width:100%; height:100px; overflow:hidden; position:relative; border-radius:12px;">
+      <img src="https://investinindonesia.uk/wp-content/uploads/2024/11/IKM-dan-UMKM.webp" class="umkm-slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:1; transition:opacity 0.8s;">
+      <img src="https://noslip.id/wp-content/uploads/2024/11/umkm.jpg" class="umkm-slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity 0.8s;">
+      <img src="https://chub.fisipol.ugm.ac.id/wp-content/uploads/sites/10/2021/01/Pasar.jpg" class="umkm-slide" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity 0.8s;">
+  </div>
+</div>
+
+<script>
+let umkmIndex = 0;
+const umkmSlides = document.querySelectorAll(".umkm-slide");
+
+function umkmNext(){
+  umkmSlides[umkmIndex].style.opacity = 0;
+  umkmIndex = (umkmIndex + 1) % umkmSlides.length;
+  umkmSlides[umkmIndex].style.opacity = 1;
+}
+
+setInterval(umkmNext, 3000); // ganti gambar tiap 3 detik
+</script>
+       <h3 class="card-title text-xl font-bold mb-2">UMKM Dusun</h3>
+       <p class="card-text text-sm mb-4">Produk unggulan dari warga dusun</p><button id="btnUmkm" class="btn-primary px-6 py-2 rounded-lg font-semibold" onclick="window.location.href='https://sites.google.com/view/dusundangkel/umkm?authuser=0'">Lihat UMKM</button>
+      </div><!-- Peta -->
+      <div class="menu-card rounded-2xl shadow-xl p-8 text-center">
+       <div class="mb-4">
+        <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="40" cy="40" r="35" fill="#F44336" opacity="0.2" /> <circle cx="40" cy="35" r="15" stroke="#F44336" stroke-width="3" fill="none" /> <circle cx="40" cy="35" r="6" fill="#F44336" /> <path d="M40 50C40 50 52 42 52 32C52 25 46.6 20 40 20C33.4 20 28 25 28 32C28 42 40 50 40 50Z" fill="#F44336" opacity="0.3" />
+        </svg>
+       </div>
+       <h3 class="card-title text-xl font-bold mb-2">Peta Dusun</h3>
+       <p class="card-text text-sm mb-4">Lokasi dan wilayah dusun</p><button class="btn-primary px-6 py-2 rounded-lg font-semibold">Lihat Peta</button>
+      </div><!-- Organisasi -->
+      <div class="menu-card rounded-2xl shadow-xl p-8 text-center">
+       <div class="mb-4">
+        <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="40" cy="40" r="35" fill="#3F51B5" opacity="0.2" /> <circle cx="40" cy="25" r="8" fill="#3F51B5" /> <path d="M40 35C33 35 27 38 27 43V48H53V43C53 38 47 35 40 35Z" fill="#3F51B5" /> <circle cx="25" cy="45" r="6" fill="#3F51B5" opacity="0.7" /> <circle cx="55" cy="45" r="6" fill="#3F51B5" opacity="0.7" /> <path d="M15 58C15 55 18 52 22 52C26 52 29 55 29 58V62H15V58Z" fill="#3F51B5" opacity="0.7" /> <path d="M51 58C51 55 54 52 58 52C62 52 65 55 65 58V62H51V58Z" fill="#3F51B5" opacity="0.7" />
+        </svg>
+       </div>
+       <h3 class="card-title text-xl font-bold mb-2">Organisasi</h3>
+       <p class="card-text text-sm mb-4">Struktur organisasi dusun</p><button class="btn-primary px-6 py-2 rounded-lg font-semibold">Lihat Struktur</button>
+      </div><!-- Kontak -->
+      <div class="menu-card rounded-2xl shadow-xl p-8 text-center">
+       <div class="mb-4">
+        <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="40" cy="40" r="35" fill="#4CAF50" opacity="0.2" /> <rect x="20" y="25" width="40" height="30" rx="2" fill="#4CAF50" /> <path d="M20 25L40 40L60 25" stroke="white" stroke-width="3" fill="none" /> <circle cx="55" cy="55" r="10" fill="#4CAF50" /> <path d="M52 55L58 55M55 52L55 58" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+       </div>
+       <h3 class="card-title text-xl font-bold mb-2">Kontak Kami</h3>
+       <p class="card-text text-sm mb-4">Hubungi perangkat dusun</p><button class="btn-primary px-6 py-2 rounded-lg font-semibold">Hubungi</button>
+      </div>
+     </div>
+    </section><!-- Peta Lokasi -->
+    <section id="peta" class="mb-16">
+     <h2 class="section-title text-3xl font-bold text-center mb-10">Lokasi Dusun</h2>
+     <div class="map-container rounded-2xl shadow-xl overflow-hidden" style="background: white;">
+      <div style="padding: 40px;">
+       <svg width="100%" height="400" viewbox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg"><!-- Background --> <rect width="800" height="400" fill="#E8F5E9" /> <!-- Roads --> <path d="M0 200H800" stroke="#BDBDBD" stroke-width="15" /> <path d="M400 0V400" stroke="#BDBDBD" stroke-width="15" /> <path d="M0 205H800" stroke="#FDD835" stroke-width="2" stroke-dasharray="20 15" /> <path d="M405 0V400" stroke="#FDD835" stroke-width="2" stroke-dasharray="20 15" /> <!-- Buildings --> <rect x="150" y="80" width="80" height="80" rx="5" fill="#1976D2" /> <rect x="155" y="130" width="20" height="25" fill="#FDD835" /> <rect x="180" y="95" width="25" height="25" fill="#64B5F6" /> <rect x="205" y="95" width="20" height="25" fill="#64B5F6" /> <rect x="500" y="90" width="90" height="80" rx="5" fill="#388E3C" /> <rect x="510" y="135" width="22" height="30" fill="#FDD835" /> <rect x="550" y="105" width="28" height="28" fill="#81C784" /> <rect x="200" y="250" width="100" height="90" rx="5" fill="#D32F2F" /> <rect x="210" y="300" width="25" height="35" fill="#FDD835" /> <rect x="245" y="265" width="30" height="30" fill="#EF5350" /> <rect x="245" y="305" width="30" height="30" fill="#EF5350" /> <rect x="520" y="260" width="85" height="75" rx="5" fill="#F57C00" /> <rect x="530" y="300" width="22" height="30" fill="#FDD835" /> <rect x="565" y="275" width="25" height="25" fill="#FFB74D" /> <!-- Trees --> <circle cx="100" cy="120" r="25" fill="#4CAF50" /> <rect x="95" y="140" width="10" height="20" fill="#8D6E63" /> <circle cx="650" cy="140" r="28" fill="#66BB6A" /> <rect x="645" y="163" width="10" height="22" fill="#8D6E63" /> <circle cx="120" cy="300" r="30" fill="#43A047" /> <rect x="115" y="325" width="10" height="25" fill="#8D6E63" /> <circle cx="680" cy="320" r="26" fill="#4CAF50" /> <rect x="675" y="342" width="10" height="20" fill="#8D6E63" /> <!-- Location Pin (Kantor Dusun) --> <g transform="translate(400, 200)">
+         <circle cx="0" cy="-30" r="20" fill="#F44336" />
+         <circle cx="0" cy="-30" r="8" fill="white" />
+         <path d="M0 -10L-8 5L8 5Z" fill="#F44336" />
+        </g> <!-- Labels --> <text x="400" y="170" text-anchor="middle" fill="#C62828" font-size="16" font-weight="bold">
+         📍 Kantor Dusun
+        </text>
+       </svg>
+       <div class="text-center mt-6 p-6 rounded-lg" style="background: #F5F5F5;">
+        <h3 class="map-title text-xl font-bold mb-2">Alamat Lengkap</h3>
+        <p id="mapAddress" class="map-text text-base">Dusun Dangkel, Desa Dangkel, Kec. Parakan, Kab. Temanggung</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Struktur Organisasi -->
+    <section id="organisasi" class="mb-16">
+     <h2 class="section-title text-3xl font-bold text-center mb-10">Struktur Organisasi</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Org 1 -->
+      <div class="org-card rounded-xl shadow-lg p-6 text-center">
+       <div class="mb-4">
+        <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="40" cy="40" r="38" fill="#1976D2" opacity="0.1" /> <circle cx="40" cy="30" r="12" fill="#1976D2" /> <path d="M40 44C30 44 22 49 22 56V65H58V56C58 49 50 44 40 44Z" fill="#1976D2" /> <circle cx="40" cy="18" r="6" fill="#FDD835" />
+        </svg>
+       </div>
+       <h3 id="org1Position" class="org-position text-lg font-bold mb-1">Kepala Dusun</h3>
+       <p id="org1Name" class="org-name text-base">Bapak Suherman</p>
+      </div><!-- Org 2 -->
+      <div class="org-card rounded-xl shadow-lg p-6 text-center">
+       <div class="mb-4">
+        <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="40" cy="40" r="38" fill="#388E3C" opacity="0.1" /> <circle cx="40" cy="30" r="12" fill="#388E3C" /> <path d="M40 44C30 44 22 49 22 56V65H58V56C58 49 50 44 40 44Z" fill="#388E3C" />
+        </svg>
+       </div>
+       <h3 id="org2Position" class="org-position text-lg font-bold mb-1">Sekretaris</h3>
+       <p id="org2Name" class="org-name text-base">Ibu Siti Aminah</p>
+      </div><!-- Org 3 -->
+      <div class="org-card rounded-xl shadow-lg p-6 text-center">
+       <div class="mb-4">
+        <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="40" cy="40" r="38" fill="#F57C00" opacity="0.1" /> <circle cx="40" cy="30" r="12" fill="#F57C00" /> <path d="M40 44C30 44 22 49 22 56V65H58V56C58 49 50 44 40 44Z" fill="#F57C00" />
+        </svg>
+       </div>
+       <h3 id="org3Position" class="org-position text-lg font-bold mb-1">Bendahara</h3>
+       <p id="org3Name" class="org-name text-base">Bapak Rahmat</p>
+      </div><!-- Org 4 -->
+      <div class="org-card rounded-xl shadow-lg p-6 text-center">
+       <div class="mb-4">
+        <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="40" cy="40" r="38" fill="#7B1FA2" opacity="0.1" /> <circle cx="40" cy="30" r="12" fill="#7B1FA2" /> <path d="M40 44C30 44 22 49 22 56V65H58V56C58 49 50 44 40 44Z" fill="#7B1FA2" />
+        </svg>
+       </div>
+       <h3 id="org4Position" class="org-position text-lg font-bold mb-1">Ketua RT 01</h3>
+       <p id="org4Name" class="org-name text-base">Bapak Joko</p>
+      </div>
+     </div>
+    </section><!-- Potensi Kesenian -->
+    <section class="mb-16">
+     <h2 class="section-title text-3xl font-bold text-center mb-10">Potensi Kesenian Dusun</h2>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><!-- Kesenian 1 -->
+      <div class="art-card rounded-2xl shadow-xl p-8 text-center">
+       <div class="mb-6">
+        <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="60" cy="60" r="55" fill="#E91E63" opacity="0.1" /> <path d="M40 80C40 70 45 60 50 55C55 50 60 45 60 35C60 45 65 50 70 55C75 60 80 70 80 80" stroke="#E91E63" stroke-width="4" fill="none" /> <circle cx="40" cy="80" r="8" fill="#E91E63" /> <circle cx="80" cy="80" r="8" fill="#E91E63" /> <path d="M35 50L60 35L85 50" stroke="#E91E63" stroke-width="3" fill="none" /> <circle cx="60" cy="25" r="6" fill="#E91E63" />
+        </svg>
+       </div>
+       <h3 id="art1Name" class="art-title text-xl font-bold mb-3">Tari Tradisional</h3>
+       <p class="art-desc text-sm">Tarian khas dusun yang dilestarikan turun-temurun dengan gerakan yang indah dan penuh makna</p>
+      </div><!-- Kesenian 2 -->
+      <div class="art-card rounded-2xl shadow-xl p-8 text-center">
+       <div class="mb-6">
+        <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="60" cy="60" r="55" fill="#FF9800" opacity="0.1" /> <ellipse cx="60" cy="60" rx="35" ry="15" fill="#FF9800" /> <ellipse cx="60" cy="50" rx="30" ry="12" fill="#FFA726" /> <ellipse cx="60" cy="40" rx="25" ry="10" fill="#FFB74D" /> <circle cx="60" cy="32" r="8" fill="#FDD835" /> <rect x="45" y="65" width="6" height="25" rx="3" fill="#8D6E63" /> <rect x="69" y="65" width="6" height="25" rx="3" fill="#8D6E63" />
+        </svg>
+       </div>
+       <h3 id="art2Name" class="art-title text-xl font-bold mb-3">Musik Gamelan</h3>
+       <p class="art-desc text-sm">Ensemble musik tradisional dengan perpaduan bunyi yang harmonis dan menenangkan</p>
+      </div><!-- Kesenian 3 -->
+      <div class="art-card rounded-2xl shadow-xl p-8 text-center">
+       <div class="mb-6">
+        <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="60" cy="60" r="55" fill="#9C27B0" opacity="0.1" /> <rect x="40" y="30" width="40" height="60" rx="3" fill="#9C27B0" /> <circle cx="50" cy="45" r="5" fill="white" /> <circle cx="70" cy="45" r="5" fill="white" /> <path d="M50 60C50 60 55 65 60 65C65 65 70 60 70 60" stroke="white" stroke-width="3" fill="none" /> <path d="M35 50L40 45L40 55L35 50Z" fill="#9C27B0" /> <path d="M85 50L80 45L80 55L85 50Z" fill="#9C27B0" /> <rect x="55" y="20" width="10" height="15" fill="#8D6E63" />
+        </svg>
+       </div>
+       <h3 id="art3Name" class="art-title text-xl font-bold mb-3">Wayang Kulit</h3>
+       <p class="art-desc text-sm">Pertunjukan wayang kulit dengan cerita-cerita klasik yang sarat nilai kehidupan</p>
+      </div>
+     </div>
+    </section><!-- Jadwal Agenda -->
+    <section id="jadwal" class="mb-16">
+     <h2 class="section-title text-3xl font-bold text-center mb-10">Jadwal Agenda Dusun</h2>
+     <div class="agenda-wrapper rounded-2xl shadow-xl p-8">
+      <div class="space-y-4"><!-- Agenda 1 -->
+       <div class="agenda-item flex items-center gap-6 p-6 rounded-xl">
+        <div class="date-box text-center p-4 rounded-lg shadow-md" style="min-width: 100px;">
+         <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2"><rect x="10" y="12" width="30" height="30" rx="2" fill="#4CAF50" /> <rect x="10" y="8" width="30" height="8" rx="2" fill="#66BB6A" /> <line x1="18" y1="8" x2="18" y2="14" stroke="#2E7D32" stroke-width="2" /> <line x1="32" y1="8" x2="32" y2="14" stroke="#2E7D32" stroke-width="2" />
+         </svg>
+         <p id="agenda1Date" class="agenda-date text-sm font-bold">20 Jan 2024</p>
+        </div>
+        <div class="flex-1">
+         <h4 id="agenda1Title" class="agenda-title text-xl font-bold mb-2">Gotong Royong Bersih Dusun</h4>
+         <p class="agenda-desc text-sm">Kegiatan bersih-bersih lingkungan dusun yang melibatkan seluruh warga</p>
+        </div>
+       </div><!-- Agenda 2 -->
+       <div class="agenda-item flex items-center gap-6 p-6 rounded-xl">
+        <div class="date-box text-center p-4 rounded-lg shadow-md" style="min-width: 100px;">
+         <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2"><rect x="10" y="12" width="30" height="30" rx="2" fill="#2196F3" /> <rect x="10" y="8" width="30" height="8" rx="2" fill="#42A5F5" /> <line x1="18" y1="8" x2="18" y2="14" stroke="#1565C0" stroke-width="2" /> <line x1="32" y1="8" x2="32" y2="14" stroke="#1565C0" stroke-width="2" />
+         </svg>
+         <p id="agenda2Date" class="agenda-date text-sm font-bold">25 Jan 2024</p>
+        </div>
+        <div class="flex-1">
+         <h4 id="agenda2Title" class="agenda-title text-xl font-bold mb-2">Rapat RT Bulanan</h4>
+         <p class="agenda-desc text-sm">Pertemuan rutin RT untuk membahas program dan kendala di lingkungan</p>
+        </div>
+       </div><!-- Agenda 3 -->
+       <div class="agenda-item flex items-center gap-6 p-6 rounded-xl">
+        <div class="date-box text-center p-4 rounded-lg shadow-md" style="min-width: 100px;">
+         <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2"><rect x="10" y="12" width="30" height="30" rx="2" fill="#E91E63" /> <rect x="10" y="8" width="30" height="8" rx="2" fill="#EC407A" /> <line x1="18" y1="8" x2="18" y2="14" stroke="#AD1457" stroke-width="2" /> <line x1="32" y1="8" x2="32" y2="14" stroke="#AD1457" stroke-width="2" />
+         </svg>
+         <p id="agenda3Date" class="agenda-date text-sm font-bold">28 Jan 2024</p>
+        </div>
+        <div class="flex-1">
+         <h4 id="agenda3Title" class="agenda-title text-xl font-bold mb-2">Posyandu Balita</h4>
+         <p class="agenda-desc text-sm">Pelayanan kesehatan untuk ibu dan balita di balai dusun</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Statistik -->
+    <section class="mb-16">
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="stat-box text-center p-8 rounded-xl shadow-lg">
+       <div class="mb-3">
+        <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="30" cy="30" r="28" fill="#4CAF50" opacity="0.2" /> <circle cx="30" cy="25" r="8" fill="#4CAF50" /> <path d="M30 35C22 35 15 39 15 45V50H45V45C45 39 38 35 30 35Z" fill="#4CAF50" />
+        </svg>
+       </div>
+       <h3 class="stat-number text-3xl font-bold mb-1">2,450</h3>
+       <p class="stat-label text-sm">Total Penduduk</p>
+      </div>
+      <div class="stat-box text-center p-8 rounded-xl shadow-lg">
+       <div class="mb-3">
+        <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="30" cy="30" r="28" fill="#2196F3" opacity="0.2" /> <path d="M15 35L30 20L45 35H40V50H20V35H15Z" fill="#2196F3" /> <rect x="27" y="42" width="6" height="8" fill="white" opacity="0.7" />
+        </svg>
+       </div>
+       <h3 class="stat-number text-3xl font-bold mb-1">650</h3>
+       <p class="stat-label text-sm">Kepala Keluarga</p>
+      </div>
+      <div class="stat-box text-center p-8 rounded-xl shadow-lg">
+       <div class="mb-3">
+        <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="30" cy="30" r="28" fill="#FF9800" opacity="0.2" /> <rect x="15" y="20" width="30" height="25" rx="2" fill="#FF9800" /> <rect x="20" y="25" width="8" height="8" fill="white" opacity="0.5" /> <rect x="32" y="25" width="8" height="8" fill="white" opacity="0.5" />
+        </svg>
+       </div>
+       <h3 class="stat-number text-3xl font-bold mb-1">45</h3>
+       <p class="stat-label text-sm">UMKM Aktif</p>
+      </div>
+      <div class="stat-box text-center p-8 rounded-xl shadow-lg">
+       <div class="mb-3">
+        <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="30" cy="30" r="28" fill="#9C27B0" opacity="0.2" /> <circle cx="30" cy="30" r="15" stroke="#9C27B0" stroke-width="3" fill="none" /> <path d="M30 18V30L38 34" stroke="#9C27B0" stroke-width="3" stroke-linecap="round" />
+        </svg>
+       </div>
+       <h3 class="stat-number text-3xl font-bold mb-1">25+</h3>
+       <p class="stat-label text-sm">Kegiatan/Tahun</p>
+      </div>
+     </div>
+    </section>
+   </main><!-- Footer -->
+   <footer id="footer" class="py-10 px-6 mt-16">
+    <div class="max-w-7xl mx-auto text-center">
+     <div class="mb-6">
+      <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-3"><circle cx="25" cy="25" r="23" fill="white" opacity="0.2" /> <path d="M15 28L25 15L35 28H32V38H18V28H15Z" fill="white" />
+      </svg>
+      <h3 class="footer-title text-xl font-bold mb-2">Dusun Dangkel</h3>
+      <p class="footer-text text-sm">Jl. Desa Raya No. 123, Kec. Makmur, Kab. Sejahtera</p>
+     </div>
+     <div class="footer-contact mb-6">
+      <p class="text-sm mb-1">📞 Telp: (021) 1234-5678</p>
+      <p class="text-sm mb-1">📧 Email: info@dusun-sukamaju.id</p>
+     </div>
+     <div class="border-t pt-6" style="border-color: rgba(255,255,255,0.2);">
+      <p class="footer-copyright text-sm">© 2024 . All rights reserved.</p>
+     </div>Dusun Dangkel
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#F5F7FA",
+      header_color: "#2E7D32",
+      hero_color: "#4CAF50",
+      card_color: "#FFFFFF",
+      text_color: "#2C3E50",
+      font_family: "system-ui, -apple-system, sans-serif",
+      font_size: 16,
+      village_name: "Dusun Dangkel",
+      tagline: "Bersama Membangun Desa yang Lebih Baik",
+      carousel1_title: "Keindahan Alam Dusun",
+      carousel2_title: "Kehidupan Masyarakat",
+      carousel3_title: "Kegiatan Bersama",
+      welcome_title: "Selamat Datang di Website Dusun Kami",
+      welcome_message: "Kami mengucapkan selamat datang kepada seluruh masyarakat dan para pengunjung website dusun kami. Mari bersama-sama membangun desa yang lebih maju dan sejahtera.",
+      leader_name: "Bapak Suherman",
+      leader_position: "Kepala Dusun Dangkel",
+      leader_speech: "Assalamualaikum Warahmatullahi Wabarakatuh. Salam sejahtera bagi kita semua.\n\nPuji syukur kita panjatkan kehadirat Allah SWT atas segala nikmat dan karunia-Nya. Selamat datang di website resmi Dusun Temanggung. Website ini merupakan wujud transparansi dan kemudahan akses informasi bagi seluruh warga dan masyarakat umum.\n\nMari kita bersama-sama membangun dusun yang lebih maju, sejahtera, dan harmonis. Saya mengajak seluruh warga untuk aktif berpartisipasi dalam setiap kegiatan pembangunan dusun.\n\nWassalamualaikum Warahmatullahi Wabarakatuh.",
+      umkm_link: "https://umkm-dusun.com",
+      org1_position: "Kepala Dusun",
+      org1_name: "Bapak Suherman",
+      org2_position: "Sekretaris",
+      org2_name: "Ibu Siti Aminah",
+      org3_position: "Bendahara",
+      org3_name: "Bapak Rahmat",
+      org4_position: "Ketua RT 01",
+      org4_name: "Bapak Joko",
+      art1_name: "Tari Tradisional",
+      art2_name: "Musik Gamelan",
+      art3_name: "Wayang Kulit",
+      agenda1_title: "Gotong Royong Bersih Dusun",
+      agenda1_date: "20 Jan 2024",
+      agenda2_title: "Rapat RT Bulanan",
+      agenda2_date: "25 Jan 2024",
+      agenda3_title: "Posyandu Balita",
+      agenda3_date: "28 Jan 2024",
+      footer_address: "Dusun Dangkel, Desa Dangkel\nKec. Parakan, Kab. Temannggung",
+      footer_phone: "(021) 1234-5678\n+62 812-3456-7890",
+      footer_email: "info@dusun-sukamaju.id\nkepala.dusun@sukamaju.id"
+    };
+
+    // Carousel functionality
+    let currentSlide = 1;
+    const totalSlides = 3;
+    let autoplayInterval;
+
+    function showSlide(slideNumber) {
+      document.querySelectorAll('.carousel-slide').forEach(slide => {
+        slide.classList.remove('active');
+      });
+      document.querySelectorAll('.carousel-dot').forEach(dot => {
+        dot.classList.remove('active');
+        dot.style.background = 'transparent';
+      });
+
+      const targetSlide = document.querySelector(`.carousel-slide[data-slide="${slideNumber}"]`);
+      const targetDot = document.querySelector(`.carousel-dot[data-slide="${slideNumber}"]`);
+      
+      if (targetSlide && targetDot) {
+        targetSlide.classList.add('active');
+        targetDot.classList.add('active');
+        targetDot.style.background = 'white';
+      }
+
+      currentSlide = slideNumber;
+    }
+
+    function nextSlide() {
+      currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+      showSlide(currentSlide);
+    }
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoplay() {
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+      }
+    }
+
+    document.querySelectorAll('.carousel-dot').forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        stopAutoplay();
+        const slideNumber = parseInt(e.target.dataset.slide);
+        showSlide(slideNumber);
+        startAutoplay();
+      });
+    });
+
+    startAutoplay();
+
+    async function onConfigChange(config) {
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const headerColor = config.header_color || defaultConfig.header_color;
+      const heroColor = config.hero_color || defaultConfig.hero_color;
+      const cardColor = config.card_color || defaultConfig.card_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const baseFontSize = config.font_size || defaultConfig.font_size;
+
+      document.getElementById('app').style.backgroundColor = backgroundColor;
+      document.getElementById('heroSection').style.backgroundColor = heroColor;
+      document.getElementById('footer').style.backgroundColor = headerColor;
+
+      document.getElementById('villageName').textContent = config.village_name || defaultConfig.village_name;
+      document.getElementById('villageName').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+
+      document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+      document.getElementById('tagline').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+
+      document.getElementById('carousel1Title').textContent = config.carousel1_title || defaultConfig.carousel1_title;
+      document.getElementById('carousel1Title').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('carousel1Title').style.fontSize = `${baseFontSize * 3}px`;
+
+      document.getElementById('carousel2Title').textContent = config.carousel2_title || defaultConfig.carousel2_title;
+      document.getElementById('carousel2Title').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('carousel2Title').style.fontSize = `${baseFontSize * 3}px`;
+
+      document.getElementById('carousel3Title').textContent = config.carousel3_title || defaultConfig.carousel3_title;
+      document.getElementById('carousel3Title').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('carousel3Title').style.fontSize = `${baseFontSize * 3}px`;
+
+      document.getElementById('welcomeTitle').textContent = config.welcome_title || defaultConfig.welcome_title;
+      document.getElementById('welcomeTitle').style.fontSize = `${baseFontSize * 2.5}px`;
+      document.getElementById('welcomeTitle').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('welcomeTitle').style.color = '#FFFFFF';
+
+      document.getElementById('welcomeMessage').textContent = config.welcome_message || defaultConfig.welcome_message;
+      document.getElementById('welcomeMessage').style.fontSize = `${baseFontSize * 1.125}px`;
+      document.getElementById('welcomeMessage').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('welcomeMessage').style.color = 'rgba(255,255,255,0.95)';
+
+      document.getElementById('leaderName').textContent = config.leader_name || defaultConfig.leader_name;
+      document.getElementById('leaderName').style.fontSize = `${baseFontSize * 1.5}px`;
+      document.getElementById('leaderName').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('leaderName').style.color = textColor;
+
+      document.getElementById('leaderPosition').textContent = config.leader_position || defaultConfig.leader_position;
+      document.getElementById('leaderPosition').style.fontSize = `${baseFontSize * 1.125}px`;
+      document.getElementById('leaderPosition').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('leaderPosition').style.color = textColor;
+
+      const speechText = config.leader_speech || defaultConfig.leader_speech;
+      document.getElementById('leaderSpeech').innerHTML = speechText.replace(/\n/g, '<br>');
+      document.getElementById('leaderSpeech').style.fontSize = `${baseFontSize}px`;
+      document.getElementById('leaderSpeech').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('leaderSpeech').style.color = textColor;
+
+      document.getElementById('leaderSignature').textContent = config.leader_name || defaultConfig.leader_name;
+      document.getElementById('leaderSignature').style.fontSize = `${baseFontSize * 1.125}px`;
+      document.getElementById('leaderSignature').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.getElementById('leaderSignature').style.color = textColor;
+
+      document.querySelector('.leader-card').style.backgroundColor = cardColor;
+      document.querySelector('.leader-photo-frame').style.backgroundColor = backgroundColor;
+
+      const leaderNames = document.querySelectorAll('.leader-name');
+      leaderNames.forEach(name => {
+        name.style.color = textColor;
+        name.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      });
+
+      const leaderPositions = document.querySelectorAll('.leader-position');
+      leaderPositions.forEach(pos => {
+        pos.style.color = heroColor;
+        pos.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      });
+
+      const leaderSpeeches = document.querySelectorAll('.leader-speech');
+      leaderSpeeches.forEach(speech => {
+        speech.style.color = textColor;
+        speech.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      });
+
+      const signatureTexts = document.querySelectorAll('.signature-text');
+      signatureTexts.forEach(text => {
+        text.style.color = textColor;
+        text.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        text.style.fontSize = `${baseFontSize * 0.875}px`;
+      });
+
+      const signatureNames = document.querySelectorAll('.signature-name');
+      signatureNames.forEach(name => {
+        name.style.color = textColor;
+        name.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        name.style.fontSize = `${baseFontSize * 1.125}px`;
+      });
+
+      const sectionTitles = document.querySelectorAll('.section-title');
+      sectionTitles.forEach(title => {
+        title.style.color = textColor;
+        title.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        title.style.fontSize = `${baseFontSize * 1.875}px`;
+      });
+
+      document.querySelectorAll('.menu-card').forEach(card => {
+        card.style.backgroundColor = cardColor;
+      });
+
+      const cardTitles = document.querySelectorAll('.card-title');
+      cardTitles.forEach(title => {
+        title.style.color = textColor;
+        title.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        title.style.fontSize = `${baseFontSize * 1.25}px`;
+      });
+
+      const cardTexts = document.querySelectorAll('.card-text');
+      cardTexts.forEach(text => {
+        text.style.color = textColor;
+        text.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        text.style.fontSize = `${baseFontSize * 0.875}px`;
+      });
+
+      const btnPrimary = document.querySelectorAll('.btn-primary');
+      btnPrimary.forEach(btn => {
+        btn.style.backgroundColor = heroColor;
+        btn.style.color = '#FFFFFF';
+        btn.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        btn.style.fontSize = `${baseFontSize}px`;
+      });
+
+      document.querySelector('.map-container').style.backgroundColor = cardColor;
+      document.querySelector('.map-title').style.color = textColor;
+      document.querySelector('.map-title').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.querySelector('.map-title').style.fontSize = `${baseFontSize * 1.25}px`;
+
+      document.getElementById('mapAddress').textContent = config.map_address || defaultConfig.map_address;
+      document.querySelector('.map-text').style.color = textColor;
+      document.querySelector('.map-text').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      document.querySelector('.map-text').style.fontSize = `${baseFontSize}px`;
+
+      document.getElementById('org1Position').textContent = config.org1_position || defaultConfig.org1_position;
+      document.getElementById('org1Name').textContent = config.org1_name || defaultConfig.org1_name;
+      document.getElementById('org2Position').textContent = config.org2_position || defaultConfig.org2_position;
+      document.getElementById('org2Name').textContent = config.org2_name || defaultConfig.org2_name;
+      document.getElementById('org3Position').textContent = config.org3_position || defaultConfig.org3_position;
+      document.getElementById('org3Name').textContent = config.org3_name || defaultConfig.org3_name;
+      document.getElementById('org4Position').textContent = config.org4_position || defaultConfig.org4_position;
+      document.getElementById('org4Name').textContent = config.org4_name || defaultConfig.org4_name;
+
+      const orgCards = document.querySelectorAll('.org-card');
+      orgCards.forEach(card => {
+        card.style.backgroundColor = cardColor;
+      });
+
+      const orgPositions = document.querySelectorAll('.org-position');
+      orgPositions.forEach(pos => {
+        pos.style.color = textColor;
+        pos.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        pos.style.fontSize = `${baseFontSize * 1.125}px`;
+      });
+
+      const orgNames = document.querySelectorAll('.org-name');
+      orgNames.forEach(name => {
+        name.style.color = textColor;
+        name.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        name.style.fontSize = `${baseFontSize}px`;
+      });
+
+      document.getElementById('art1Name').textContent = config.art1_name || defaultConfig.art1_name;
+      document.getElementById('art2Name').textContent = config.art2_name || defaultConfig.art2_name;
+      document.getElementById('art3Name').textContent = config.art3_name || defaultConfig.art3_name;
+
+      const artCards = document.querySelectorAll('.art-card');
+      artCards.forEach(card => {
+        card.style.backgroundColor = cardColor;
+      });
+
+      const artTitles = document.querySelectorAll('.art-title');
+      artTitles.forEach(title => {
+        title.style.color = textColor;
+        title.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        title.style.fontSize = `${baseFontSize * 1.25}px`;
+      });
+
+      const artDescs = document.querySelectorAll('.art-desc');
+      artDescs.forEach(desc => {
+        desc.style.color = textColor;
+        desc.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        desc.style.fontSize = `${baseFontSize * 0.875}px`;
+      });
+
+      document.querySelector('.agenda-wrapper').style.backgroundColor = cardColor;
+
+      document.getElementById('agenda1Title').textContent = config.agenda1_title || defaultConfig.agenda1_title;
+      document.getElementById('agenda1Date').textContent = config.agenda1_date || defaultConfig.agenda1_date;
+      document.getElementById('agenda2Title').textContent = config.agenda2_title || defaultConfig.agenda2_title;
+      document.getElementById('agenda2Date').textContent = config.agenda2_date || defaultConfig.agenda2_date;
+      document.getElementById('agenda3Title').textContent = config.agenda3_title || defaultConfig.agenda3_title;
+      document.getElementById('agenda3Date').textContent = config.agenda3_date || defaultConfig.agenda3_date;
+
+      const agendaItems = document.querySelectorAll('.agenda-item');
+      agendaItems.forEach(item => {
+        item.style.backgroundColor = backgroundColor;
+      });
+
+      const dateBoxes = document.querySelectorAll('.date-box');
+      dateBoxes.forEach(box => {
+        box.style.backgroundColor = cardColor;
+      });
+
+      const agendaTitles = document.querySelectorAll('.agenda-title');
+      agendaTitles.forEach(title => {
+        title.style.color = textColor;
+        title.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        title.style.fontSize = `${baseFontSize * 1.25}px`;
+      });
+
+      const agendaDescs = document.querySelectorAll('.agenda-desc');
+      agendaDescs.forEach(desc => {
+        desc.style.color = textColor;
+        desc.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        desc.style.fontSize = `${baseFontSize * 0.875}px`;
+      });
+
+      const agendaDates = document.querySelectorAll('.agenda-date');
+      agendaDates.forEach(date => {
+        date.style.color = textColor;
+        date.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        date.style.fontSize = `${baseFontSize * 0.875}px`;
+      });
+
+      const statBoxes = document.querySelectorAll('.stat-box');
+      statBoxes.forEach(box => {
+        box.style.backgroundColor = cardColor;
+      });
+
+      const statNumbers = document.querySelectorAll('.stat-number');
+      statNumbers.forEach(num => {
+        num.style.color = heroColor;
+        num.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        num.style.fontSize = `${baseFontSize * 1.875}px`;
+      });
+
+      const statLabels = document.querySelectorAll('.stat-label');
+      statLabels.forEach(label => {
+        label.style.color = textColor;
+        label.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        label.style.fontSize = `${baseFontSize * 0.875}px`;
+      });
+
+      const addressText = config.footer_address || defaultConfig.footer_address;
+      document.getElementById('footerAddress').innerHTML = addressText.replace(/\n/g, '<br>');
+
+      const phoneText = config.footer_phone || defaultConfig.footer_phone;
+      document.getElementById('footerPhone').innerHTML = phoneText.replace(/\n/g, '<br>');
+
+      const emailText = config.footer_email || defaultConfig.footer_email;
+      document.getElementById('footerEmail').innerHTML = emailText.replace(/\n/g, '<br>');
+
+      const footerSectionTitle = document.querySelector('.footer-section-title');
+      if (footerSectionTitle) {
+        footerSectionTitle.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        footerSectionTitle.style.fontSize = `${baseFontSize * 1.875}px`;
+      }
+
+      const contactLabels = document.querySelectorAll('.contact-label');
+      contactLabels.forEach(label => {
+        label.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        label.style.fontSize = `${baseFontSize * 1.125}px`;
+      });
+
+      const contactTexts = document.querySelectorAll('.contact-text');
+      contactTexts.forEach(text => {
+        text.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+        text.style.fontSize = `${baseFontSize * 0.875}px`;
+      });
+
+      const footerTitle = document.querySelector('.footer-title');
+      footerTitle.style.color = '#FFFFFF';
+      footerTitle.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      footerTitle.style.fontSize = `${baseFontSize * 1.25}px`;
+
+      const footerCopyright = document.querySelector('.footer-copyright');
+      footerCopyright.style.color = 'rgba(255,255,255,0.8)';
+      footerCopyright.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
+      footerCopyright.style.fontSize = `${baseFontSize * 0.875}px`;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.header_color || defaultConfig.header_color,
+            set: (value) => {
+              config.header_color = value;
+              window.elementSdk.setConfig({ header_color: value });
+            }
+          },
+          {
+            get: () => config.hero_color || defaultConfig.hero_color,
+            set: (value) => {
+              config.hero_color = value;
+              window.elementSdk.setConfig({ hero_color: value });
+            }
+          },
+          {
+            get: () => config.card_color || defaultConfig.card_color,
+            set: (value) => {
+              config.card_color = value;
+              window.elementSdk.setConfig({ card_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["village_name", config.village_name || defaultConfig.village_name],
+        ["tagline", config.tagline || defaultConfig.tagline],
+        ["carousel1_title", config.carousel1_title || defaultConfig.carousel1_title],
+        ["carousel2_title", config.carousel2_title || defaultConfig.carousel2_title],
+        ["carousel3_title", config.carousel3_title || defaultConfig.carousel3_title],
+        ["welcome_title", config.welcome_title || defaultConfig.welcome_title],
+        ["welcome_message", config.welcome_message || defaultConfig.welcome_message],
+        ["leader_name", config.leader_name || defaultConfig.leader_name],
+        ["leader_position", config.leader_position || defaultConfig.leader_position],
+        ["leader_speech", config.leader_speech || defaultConfig.leader_speech],
+        ["umkm_link", config.umkm_link || defaultConfig.umkm_link],
+        ["org1_position", config.org1_position || defaultConfig.org1_position],
+        ["org1_name", config.org1_name || defaultConfig.org1_name],
+        ["org2_position", config.org2_position || defaultConfig.org2_position],
+        ["org2_name", config.org2_name || defaultConfig.org2_name],
+        ["org3_position", config.org3_position || defaultConfig.org3_position],
+        ["org3_name", config.org3_name || defaultConfig.org3_name],
+        ["org4_position", config.org4_position || defaultConfig.org4_position],
+        ["org4_name", config.org4_name || defaultConfig.org4_name],
+        ["art1_name", config.art1_name || defaultConfig.art1_name],
+        ["art2_name", config.art2_name || defaultConfig.art2_name],
+        ["art3_name", config.art3_name || defaultConfig.art3_name],
+        ["agenda1_title", config.agenda1_title || defaultConfig.agenda1_title],
+        ["agenda1_date", config.agenda1_date || defaultConfig.agenda1_date],
+        ["agenda2_title", config.agenda2_title || defaultConfig.agenda2_title],
+        ["agenda2_date", config.agenda2_date || defaultConfig.agenda2_date],
+        ["agenda3_title", config.agenda3_title || defaultConfig.agenda3_title],
+        ["agenda3_date", config.agenda3_date || defaultConfig.agenda3_date],
+        ["footer_address", config.footer_address || defaultConfig.footer_address],
+        ["footer_phone", config.footer_phone || defaultConfig.footer_phone],
+        ["footer_email", config.footer_email || defaultConfig.footer_email]
+      ]);
+    }
+
+    document.getElementById('btnUmkm').addEventListener('click', () => {
+      const umkmLink = window.elementSdk ? 
+        (window.elementSdk.config.umkm_link || defaultConfig.umkm_link) : 
+        defaultConfig.umkm_link;
+      window.open(umkmLink, '_blank', 'noopener,noreferrer');
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuDropdown = document.getElementById('mobileMenuDropdown');
+    
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        if (mobileMenuDropdown.style.display === 'none' || mobileMenuDropdown.style.display === '') {
+          mobileMenuDropdown.style.display = 'flex';
+        } else {
+          mobileMenuDropdown.style.display = 'none';
+        }
+      });
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-link-mobile').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenuDropdown) {
+          mobileMenuDropdown.style.display = 'none';
+        }
+      });
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9abb057a1272b5ee',t:'MTc2NTM1MTY2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
