@@ -1,0 +1,63 @@
+<h2>Admin Agenda</h2>
+
+<div id="loginBox">
+  <input id="password" type="password" placeholder="Password Admin">
+  <button onclick="login()">Login</button>
+</div>
+
+<div id="editor" style="display:none;">
+  <h3>Edit Agenda</h3>
+  <textarea id="agendaText" style="width:100%;height:200px;"></textarea>
+  <button onclick="saveAgenda()">Simpan Perubahan</button>
+</div>
+
+<script>
+const ADMIN_PASSWORD = "gantipasswordmu";
+
+function login() {
+    const p = document.getElementById("password").value;
+    if (p === ADMIN_PASSWORD) {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("editor").style.display = "block";
+        loadAgenda();
+    } else {
+        alert("Password salah!");
+    }
+}
+
+function loadAgenda() {
+    fetch("agenda.json")
+        .then(res => res.text())
+        .then(text => document.getElementById("agendaText").value = text);
+}
+
+async function saveAgenda() {
+    const newContent = document.getElementById("agendaText").value;
+
+    const repoOwner = "username_githubmu";
+    const repoName = "nama_repo";
+    const filePath = "agenda.json";
+    const token = "TOKEN_GITHUB_MU";
+
+    // Ambil SHA file
+    const res = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`);
+    const fileData = await res.json();
+
+    // Kirim update
+    await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
+        method: "PUT",
+        headers: {
+            "Authorization": `token ${token}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            message: "Update agenda",
+            content: btoa(unescape(encodeURIComponent(newContent))),
+            sha: fileData.sha
+        })
+    });
+
+    alert("Agenda berhasil diperbarui!");
+}
+</script>
+
