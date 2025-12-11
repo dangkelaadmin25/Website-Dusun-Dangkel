@@ -694,12 +694,12 @@ setInterval(umkmNext, 3000); // ganti gambar tiap 3 detik
 
       document.querySelector('.agenda-wrapper').style.backgroundColor = cardColor;
 
-      document.getElementById('agenda1Title').textContent = config.agenda1_title || defaultConfig.agenda1_title;
-      document.getElementById('agenda1Date').textContent = config.agenda1_date || defaultConfig.agenda1_date;
-      document.getElementById('agenda2Title').textContent = config.agenda2_title || defaultConfig.agenda2_title;
-      document.getElementById('agenda2Date').textContent = config.agenda2_date || defaultConfig.agenda2_date;
-      document.getElementById('agenda3Title').textContent = config.agenda3_title || defaultConfig.agenda3_title;
-      document.getElementById('agenda3Date').textContent = config.agenda3_date || defaultConfig.agenda3_date;
+      document.getElementById('agenda1Title').textContent = config.agenda1_title;
+      document.getElementById('agenda1Date').textContent = config.agenda1_date; 
+      document.getElementById('agenda2Title').textContent = config.agenda2_title;
+      document.getElementById('agenda2Date').textContent = config.agenda2_date;
+      document.getElementById('agenda3Title').textContent = config.agenda3_title;
+      document.getElementById('agenda3Date').textContent = config.agenda3_date;
 
       const agendaItems = document.querySelectorAll('.agenda-item');
       agendaItems.forEach(item => {
@@ -936,6 +936,7 @@ setInterval(umkmNext, 3000); // ganti gambar tiap 3 detik
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9abb057a1272b5ee',t:'MTc2NTM1MTY2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
+
 
 
 
