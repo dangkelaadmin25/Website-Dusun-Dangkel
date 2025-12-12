@@ -1,4 +1,7 @@
 <!doctype html>
+<html lang="id">
+
+<!doctype html>
 
    <!-- Navigation Bar -->
 <nav style="position: absolute; top: 0; left: 0; right: 0; background: rgba(12, 179, 230, 0.2); backdrop-filter: blur(10px); z-index: 20; padding: 20px 40px;">
@@ -104,453 +107,308 @@
       Jadwal
     </a>
     </nav>
-<html lang="id" class="h-full">
-  <br>
-  <br>
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman UMKM Dusun Dangkel</title>
-  <script src="/_sdk/element_sdk.js"></script>
+    
+    <script
+<!-- HEADER DENGAN BACKGROUND FOTO -->
+<header 
+  class="w-full bg-cover bg-center bg-no-repeat text-center flex flex-col justify-center"
+  style="
+    background-image: url('https://i.ibb.co.com/TMP4qWts/Whats-App-Image-2025-12-07-at-15-42-00.jpg');
+    height: 230px;  /* tidak terlalu tinggi */
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: brightness(0.8);
+  "
+>
+  <div class="backdrop-blur-sm bg-black/30 py-10">
+    <h1 class="text-4xl font-bold text-white drop-shadow-lg mb-3">
+      UMKM Dusun Dangkel
+    </h1>
+    <p class="text-lg text-white drop-shadow-md">
+      Produk Lokal Berkualitas dari Warga Desa
+    </p>
+  </div>
+</header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UMKM Dusun Dangkel</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
-      box-sizing: border-box;
+      background: #f3f7ff;
+      font-family: system-ui, sans-serif;
     }
-    
+
+    /* ------------------ ROW TOKO ------------------ */
+    .toko-row {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    /* ------------------ INFO TOKO ------------------ */
+    .toko-info {
+      width: 250px;
+      min-width: 250px;
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .toko-info h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0d47a1;
+      margin-bottom: 6px;
+    }
+
+    /* ------------------ CAROUSEL ------------------ */
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 10px 40px;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 22px;
+      scroll-behavior: smooth;
+      overflow-x: auto;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* ------------------ CARD PRODUK ------------------ */
     .product-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 220px;
+      height: 270px;
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      transition: 0.3s ease;
+      flex-shrink: 0;
     }
-    
+
     .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transform: translateY(-6px);
     }
-    
-    .cta-button {
-      transition: all 0.3s ease;
+
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 8px;
     }
-    
-    .cta-button:hover {
-      transform: scale(1.05);
+
+    /* ------------------ ARROWS ------------------ */
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #0CB3E6; /* BIRU MUDA NAVBAR */
+      color: white;
+      padding: 9px 13px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 30;
+      font-weight: bold;
+      border: 3px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
-    
-    .wa-button {
-      transition: all 0.3s ease;
+
+    .arrow-left {
+      left: 5px;
     }
-    
-    .wa-button:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
+
+    .arrow-right {
+      right: 5px;
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full">
-  <div id="app" class="w-full h-full overflow-auto"><!-- Header Section -->
-   <header class="text-center py-16 px-6">
-    <h1 id="pageTitle" class="font-bold mb-4">UMKM Dusun Dangkel</h1>
-    <p id="pageSubtitle" class="text-lg">Produk Unggulan dari Masyarakat Desa</p>
-   </header><!-- Products Grid -->
-   <main class="max-w-7xl mx-auto px-6 pb-20">
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6"><!-- Product Card 1 -->
-     <div class="product-card rounded-xl shadow-lg overflow-hidden">
-      <div class="p-8 h-48 flex items-center justify-center">
-       <img src="https://mms.img.susercontent.com/id-11134207-8224v-mh1m14auwo3s43_tn" width="222" alt="">
-       <div>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="text-center py-14">
+    <h1 class="text-4xl font-bold text-blue-800 mb-3">UMKM Dusun Dangkel</h1>
+    <p class="text-lg text-blue-700">Produk Lokal Berkualitas dari Warga Desa</p>
+  </header>
+
+
+  <!-- ========================== MAIN CONTENT ========================== -->
+  <main class="max-w-7xl mx-auto px-6 pb-24">
+
+
+
+    <!-- =============================================================== -->
+    <!-- ========================= TOKO 1 =============================== -->
+    <!-- =============================================================== -->
+
+    <div class="toko-row">
+
+      <!-- INFO TOKO -->
+      <div class="toko-info">
+        <h2>Ratu Ngemil</h2>
+        <p>Camilan rumahan khas desa</p>
+
+        <a href="https://wa.me/6281234567890" target="_blank">
+          <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200">
+        </a>
+      </div>
+
+
+      <!-- CAROUSEL -->
+      <div class="carousel-container">
+
+        <div class="carousel-track" id="toko1">
+
+          <div class="product-card">
+            <img src="https://mms.img.susercontent.com/id-11134207-8224v-mh1m14auwo3s43_tn">
+            <h3 class="font-bold">Mie Gulung</h3>
+            <p class="text-sm text-gray-600">Renyah & gurih berbagai rasa</p>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3 class="font-bold">Keripik Pedas</h3>
+            <p class="text-sm">Level pedas bervariasi</p>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3 class="font-bold">Coklat Crunch</h3>
+            <p class="text-sm">Cemilan manis renyah</p>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3 class="font-bold">Lumpia Mini</h3>
+            <p class="text-sm">Isi sayur & pedas</p>
+          </div>
+
+          <div class="product-card">
+            <img src="https://via.placeholder.com/200">
+            <h3 class="font-bold">Kue Gabin</h3>
+            <p class="text-sm">Manis & gurih</p>
+          </div>
+
         </div>
-      </div>
-      <div class="p-8">
-       <h3 id="product1Name" class="font-bold mb-2 text-center">Mie  Gulung</h3>
-       <p id="product1Umkm" class="text-sm mb-2 text-center font-semibold">Ratu ngemil</p>
-       <p id="product1Desc" class="text-sm mb-3 text-center">Mie Gulung renyah dengan berbagai varian rasa</p>
-       <p id="product1Price" class="font-bold text-center mb-3">Rp 20.000</p><button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-       <button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-  <div>
-    </div>
-    <a href="https://shopee.co.id" target="_blank">
-      <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200"</a>
-    
-  </a>
-</button>
 
-      </a>
-</button>
-        <svg width="20" height="20" viewbox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        <div class="arrow-btn arrow-left" onclick="slideLeft('toko1')">‹</div>
+        <div class="arrow-btn arrow-right" onclick="slideRight('toko1')">›</div>
       </div>
-     </div><!-- Product Card 2 -->
-     <div class="product-card rounded-xl shadow-lg overflow-hidden">
-      <div class="p-8 h-48 flex items-center justify-center">
-       <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="30" width="60" height="60" rx="5" fill="#8B4513" opacity="0.2" /> <path d="M35 35H85V85H35V35Z" fill="#8B4513" /> <path d="M40 40L50 60L60 45L70 65L80 50V80H40V40Z" stroke="#FFFFFF" stroke-width="3" fill="none" /> <circle cx="70" cy="50" r="3" fill="#FFFFFF" />
-       </svg>
-      </div>
-      <div class="p-8">
-       <h3 id="product2Name" class="font-bold mb-2 text-center">Batik Tulis</h3>
-       <p id="product2Umkm" class="text-sm mb-2 text-center font-semibold">UMKM Batik Berkah</p>
-       <p id="product2Desc" class="text-sm mb-3 text-center">Batik tulis khas daerah dengan motif tradisional</p>
-       <p id="product2Price" class="font-bold text-center mb-3">Rp 250.000</p><button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-       <button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-  <div>
+
     </div>
-    <a href="https://shopee.co.id" target="_blank">
-      <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200" </a>
-    
-  </a>
-</button>
-  </a>
+
+
+
+
+    <!-- =============================================================== -->
+    <!-- ========================= TOKO 2 =============================== -->
+    <!-- =============================================================== -->
+
+    <div class="toko-row">
+
+      <div class="toko-info">
+        <h2>Batik Berkah</h2>
+        <p>Batik tulis motif tradisional</p>
+
+        <a href="https://wa.me/6282222222222" target="_blank">
+          <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200">
+        </a>
       </div>
-     </div><!-- Product Card 3 -->
-     <div class="product-card rounded-xl shadow-lg overflow-hidden">
-      <div class="p-8 h-48 flex items-center justify-center">
-       <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 45C40 41.69 42.69 39 46 39H74C77.31 39 80 41.69 80 45V75C80 78.31 77.31 81 74 81H46C42.69 81 40 78.31 40 75V45Z" fill="#228B22" opacity="0.2" /> <path d="M45 40L60 30L75 40V80H45V40Z" fill="#228B22" /> <rect x="55" y="50" width="10" height="20" fill="#FFFFFF" opacity="0.5" /> <path d="M50 40H70" stroke="#FFFFFF" stroke-width="2" /> <path d="M50 50H70" stroke="#FFFFFF" stroke-width="2" /> <path d="M50 60H70" stroke="#FFFFFF" stroke-width="2" />
-       </svg>
+
+      <div class="carousel-container">
+
+        <div class="carousel-track" id="toko2">
+
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Batik 1</h3></div>
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Batik 2</h3></div>
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Batik 3</h3></div>
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Batik 4</h3></div>
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Batik 5</h3></div>
+
+        </div>
+
+        <div class="arrow-btn arrow-left" onclick="slideLeft('toko2')">‹</div>
+        <div class="arrow-btn arrow-right" onclick="slideRight('toko2')">›</div>
+
       </div>
-      <div class="p-4">
-       <h3 id="product3Name" class="font-bold mb-2 text-center">Tas Anyaman</h3>
-       <p id="product3Umkm" class="text-sm mb-2 text-center font-semibold">UMKM Anyaman Indah</p>
-       <p id="product3Desc" class="text-sm mb-3 text-center">Tas anyaman dari bahan alami berkualitas tinggi</p>
-       <p id="product3Price" class="font-bold text-center mb-3">Rp 75.000</p><button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-      <button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-  <div>
+
     </div>
-    <a href="https://shopee.co.id" target="_blank">
-      <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200"</a>
-    
-  </a>
-</button>
-  </a>
+
+
+
+
+    <!-- =============================================================== -->
+    <!-- ========================= TOKO 3 =============================== -->
+    <!-- =============================================================== -->
+
+    <div class="toko-row">
+
+      <div class="toko-info">
+        <h2>Anyaman Indah</h2>
+        <p>Kerajinan anyaman alami</p>
+
+        <a href="https://wa.me/6283333333333" target="_blank">
+          <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200">
+        </a>
       </div>
-     </div><!-- Product Card 4 -->
-     <div class="product-card rounded-xl shadow-lg overflow-hidden">
-      <div class="p-8 h-48 flex items-center justify-center">
-       <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 35C50 32.24 52.24 30 55 30H65C67.76 30 70 32.24 70 35V50H50V35Z" fill="#6F4E37" /> <rect x="45" y="50" width="30" height="40" rx="3" fill="#8B4513" /> <ellipse cx="60" cy="52" rx="12" ry="4" fill="#A0826D" /> <path d="M52 60C54 65 58 67 60 67C62 67 66 65 68 60" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
-       </svg>
+
+      <div class="carousel-container">
+
+        <div class="carousel-track" id="toko3">
+
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Tas 1</h3></div>
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Tas 2</h3></div>
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Tas 3</h3></div>
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Tas 4</h3></div>
+          <div class="product-card"><img src="https://via.placeholder.com/200"><h3 class="font-bold">Tas 5</h3></div>
+
+        </div>
+
+        <div class="arrow-btn arrow-left" onclick="slideLeft('toko3')">‹</div>
+        <div class="arrow-btn arrow-right" onclick="slideRight('toko3')">›</div>
+
       </div>
-      <div class="p-8">
-       <h3 id="product4Name" class="font-bold mb-2 text-center">Kopi Bubuk</h3>
-       <p id="product4Umkm" class="text-sm mb-2 text-center font-semibold">UMKM Kopi Desa</p>
-       <p id="product4Desc" class="text-sm mb-3 text-center">Kopi robusta pilihan dari perkebunan lokal</p>
-       <p id="product4Price" class="font-bold text-center mb-3">Rp 45.000</p><button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-       <button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-  <div>
+
     </div>
-    <a href="https://shopee.co.id" target="_blank">
-      <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200"</a>
-    
-  </a>
-</button>
-  </a>
-      </div>
-     </div><!-- Product Card 5 -->
-     <div class="product-card rounded-xl shadow-lg overflow-hidden">
-      <div class="p-8 h-48 flex items-center justify-center">
-       <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M55 30L50 45H70L65 30H55Z" fill="#D4AF37" /> <ellipse cx="60" cy="45" rx="15" ry="5" fill="#FFD700" /> <path d="M45 45C45 45 45 75 60 75C75 75 75 45 75 45" fill="#FFA500" /> <ellipse cx="60" cy="75" rx="12" ry="4" fill="#FF8C00" /> <circle cx="52" cy="55" r="2" fill="#FFD700" opacity="0.6" /> <circle cx="60" cy="60" r="2" fill="#FFD700" opacity="0.6" /> <circle cx="68" cy="57" r="2" fill="#FFD700" opacity="0.6" />
-       </svg>
-      </div>
-      <div class="p-4">
-       <h3 id="product5Name" class="font-bold mb-2 text-center">Madu Murni</h3>
-       <p id="product5Umkm" class="text-sm mb-2 text-center font-semibold">UMKM Madu Alami</p>
-       <p id="product5Desc" class="text-sm mb-3 text-center">Madu asli dari lebah hutan tanpa campuran</p>
-       <p id="product5Price" class="font-bold text-center mb-3">Rp 85.000</p><button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-        <button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-  <div>
-    </div>
-    <a href="https://shopee.co.id" target="_blank">
-      <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200"</a>
-    
-  </a>
-</button>
-</a> 
-  </div> </a>
-      </div>
-     </div><!-- Product Card 5 -->
-     <div class="product-card rounded-xl shadow-lg overflow-hidden">
-      <div class="p-8 h-48 flex items-center justify-center">
-       <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M55 30L50 45H70L65 30H55Z" fill="#D4AF37" /> <ellipse cx="60" cy="45" rx="15" ry="5" fill="#FFD700" /> <path d="M45 45C45 45 45 75 60 75C75 75 75 45 75 45" fill="#FFA500" /> <ellipse cx="60" cy="75" rx="12" ry="4" fill="#FF8C00" /> <circle cx="52" cy="55" r="2" fill="#FFD700" opacity="0.6" /> <circle cx="60" cy="60" r="2" fill="#FFD700" opacity="0.6" /> <circle cx="68" cy="57" r="2" fill="#FFD700" opacity="0.6" />
-       </svg>
-      </div>
-      <div class="p-4">
-       <h3 id="product5Name" class="font-bold mb-2 text-center">Madu Murni</h3>
-       <p id="product5Umkm" class="text-sm mb-2 text-center font-semibold">UMKM Madu Alami</p>
-       <p id="product5Desc" class="text-sm mb-3 text-center">Madu asli dari lebah hutan tanpa campuran</p>
-       <p id="product5Price" class="font-bold text-center mb-3">Rp 85.000</p><button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-        <button class="wa-button w-full py-2 rounded-lg text-white font-semibold flex items-center justify-center gap-2">
-  <div>
-    </div>
-    <a href="https://shopee.co.id" target="_blank">
-      <img src="https://raw.githubusercontent.com/smashah/whatsapp-button/master/button-demo.png" width="200"</a>
-    
-      </div>
-     </div>
-    </div>
-   </main>
-  </div>
+
+
+  </main>
+
+
+  <!-- ======================== SCRIPT SLIDER ======================== -->
   <script>
-    const defaultConfig = {
-      background_color: "#E3F2FD",
-      card_background: "#FFFFFF",
-      primary_text: "#1565C0",
-      accent_color: "#1976D2",
-      button_color: "#25D366",
-      font_family: "system-ui, -apple-system, sans-serif",
-      font_size: 16,
-      page_title: "UMKM Desa Kami",
-      page_subtitle: "Produk Unggulan dari Masyarakat Desa",
-      product1_name: "Keripik Singkong",
-      product1_desc: "Keripik singkong renyah dengan berbagai varian rasa",
-      product2_name: "Batik Tulis",
-      product2_desc: "Batik tulis khas daerah dengan motif tradisional",
-      product3_name: "Tas Anyaman",
-      product3_desc: "Tas anyaman dari bahan alami berkualitas tinggi",
-      product3_umkm: "UMKM Anyaman Indah",
-      product3_price: "Rp 75.000",
-      product4_name: "Kopi Bubuk",
-      product4_desc: "Kopi robusta pilihan dari perkebunan lokal",
-      product4_umkm: "UMKM Kopi Desa",
-      product4_price: "Rp 45.000",
-      product5_name: "Madu Murni",
-      product5_desc: "Madu asli dari lebah hutan tanpa campuran",
-      product5_umkm: "UMKM Madu Alami",
-      product5_price: "Rp 85.000",
-      product1_umkm: "UMKM Cemilan Nusantara",
-      product1_price: "Rp 15.000",
-      product2_umkm: "UMKM Batik Berkah",
-      product2_price: "Rp 250.000"
-    };
-
-    async function onConfigChange(config) {
-      const backgroundColor = config.background_color || defaultConfig.background_color;
-      const cardBackground = config.card_background || defaultConfig.card_background;
-      const primaryText = config.primary_text || defaultConfig.primary_text;
-      const accentColor = config.accent_color || defaultConfig.accent_color;
-      const buttonColor = config.button_color || defaultConfig.button_color;
-      const fontFamily = config.font_family || defaultConfig.font_family;
-      const baseFontSize = config.font_size || defaultConfig.font_size;
-
-      document.getElementById('app').style.backgroundColor = backgroundColor;
-      
-      const header = document.querySelector('header');
-      header.style.color = primaryText;
-      
-      document.getElementById('pageTitle').textContent = config.page_title || defaultConfig.page_title;
-      document.getElementById('pageTitle').style.fontSize = `${baseFontSize * 2.5}px`;
-      document.getElementById('pageTitle').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      
-      document.getElementById('pageSubtitle').textContent = config.page_subtitle || defaultConfig.page_subtitle;
-      document.getElementById('pageSubtitle').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('pageSubtitle').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('pageSubtitle').style.color = primaryText;
-
-      const cards = document.querySelectorAll('.product-card');
-      cards.forEach(card => {
-        card.style.backgroundColor = cardBackground;
-      });
-
-      document.getElementById('product1Name').textContent = config.product1_name || defaultConfig.product1_name;
-      document.getElementById('product1Name').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product1Name').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product1Name').style.color = primaryText;
-      
-      document.getElementById('product1Desc').textContent = config.product1_desc || defaultConfig.product1_desc;
-      document.getElementById('product1Desc').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product1Desc').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product1Desc').style.color = primaryText;
-
-      document.getElementById('product2Name').textContent = config.product2_name || defaultConfig.product2_name;
-      document.getElementById('product2Name').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product2Name').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product2Name').style.color = primaryText;
-      
-      document.getElementById('product2Desc').textContent = config.product2_desc || defaultConfig.product2_desc;
-      document.getElementById('product2Desc').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product2Desc').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product2Desc').style.color = primaryText;
-
-      document.getElementById('product3Name').textContent = config.product3_name || defaultConfig.product3_name;
-      document.getElementById('product3Name').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product3Name').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product3Name').style.color = primaryText;
-      
-      document.getElementById('product3Desc').textContent = config.product3_desc || defaultConfig.product3_desc;
-      document.getElementById('product3Desc').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product3Desc').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product3Desc').style.color = primaryText;
-
-      document.getElementById('product3Umkm').textContent = config.product3_umkm || defaultConfig.product3_umkm;
-      document.getElementById('product3Umkm').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product3Umkm').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product3Umkm').style.color = accentColor;
-
-      document.getElementById('product3Price').textContent = config.product3_price || defaultConfig.product3_price;
-      document.getElementById('product3Price').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product3Price').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product3Price').style.color = accentColor;
-
-      document.getElementById('product4Name').textContent = config.product4_name || defaultConfig.product4_name;
-      document.getElementById('product4Name').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product4Name').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product4Name').style.color = primaryText;
-      
-      document.getElementById('product4Desc').textContent = config.product4_desc || defaultConfig.product4_desc;
-      document.getElementById('product4Desc').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product4Desc').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product4Desc').style.color = primaryText;
-
-      document.getElementById('product4Umkm').textContent = config.product4_umkm || defaultConfig.product4_umkm;
-      document.getElementById('product4Umkm').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product4Umkm').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product4Umkm').style.color = accentColor;
-
-      document.getElementById('product4Price').textContent = config.product4_price || defaultConfig.product4_price;
-      document.getElementById('product4Price').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product4Price').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product4Price').style.color = accentColor;
-
-      document.getElementById('product5Name').textContent = config.product5_name || defaultConfig.product5_name;
-      document.getElementById('product5Name').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product5Name').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product5Name').style.color = primaryText;
-      
-      document.getElementById('product5Desc').textContent = config.product5_desc || defaultConfig.product5_desc;
-      document.getElementById('product5Desc').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product5Desc').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product5Desc').style.color = primaryText;
-
-      document.getElementById('product5Umkm').textContent = config.product5_umkm || defaultConfig.product5_umkm;
-      document.getElementById('product5Umkm').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product5Umkm').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product5Umkm').style.color = accentColor;
-
-      document.getElementById('product5Price').textContent = config.product5_price || defaultConfig.product5_price;
-      document.getElementById('product5Price').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product5Price').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product5Price').style.color = accentColor;
-
-      document.getElementById('product1Umkm').textContent = config.product1_umkm || defaultConfig.product1_umkm;
-      document.getElementById('product1Umkm').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product1Umkm').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product1Umkm').style.color = accentColor;
-
-      document.getElementById('product1Price').textContent = config.product1_price || defaultConfig.product1_price;
-      document.getElementById('product1Price').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product1Price').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product1Price').style.color = accentColor;
-
-      document.getElementById('product2Umkm').textContent = config.product2_umkm || defaultConfig.product2_umkm;
-      document.getElementById('product2Umkm').style.fontSize = `${baseFontSize * 0.875}px`;
-      document.getElementById('product2Umkm').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product2Umkm').style.color = accentColor;
-
-      document.getElementById('product2Price').textContent = config.product2_price || defaultConfig.product2_price;
-      document.getElementById('product2Price').style.fontSize = `${baseFontSize * 1.125}px`;
-      document.getElementById('product2Price').style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      document.getElementById('product2Price').style.color = accentColor;
-
-      const waButtons = document.querySelectorAll('.wa-button');
-      waButtons.forEach(button => {
-        button.style.backgroundColor = buttonColor;
-        button.style.fontSize = `${baseFontSize * 0.875}px`;
-        button.style.fontFamily = `${fontFamily}, system-ui, sans-serif`;
-      });
-
+    function slideLeft(id) {
+      const track = document.getElementById(id);
+      track.scrollBy({ left: -260, behavior: "smooth" });
     }
 
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
-          },
-          {
-            get: () => config.card_background || defaultConfig.card_background,
-            set: (value) => {
-              config.card_background = value;
-              window.elementSdk.setConfig({ card_background: value });
-            }
-          },
-          {
-            get: () => config.primary_text || defaultConfig.primary_text,
-            set: (value) => {
-              config.primary_text = value;
-              window.elementSdk.setConfig({ primary_text: value });
-            }
-          },
-          {
-            get: () => config.accent_color || defaultConfig.accent_color,
-            set: (value) => {
-              config.accent_color = value;
-              window.elementSdk.setConfig({ accent_color: value });
-            }
-          },
-          {
-            get: () => config.button_color || defaultConfig.button_color,
-            set: (value) => {
-              config.button_color = value;
-              window.elementSdk.setConfig({ button_color: value });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            config.font_family = value;
-            window.elementSdk.setConfig({ font_family: value });
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            config.font_size = value;
-            window.elementSdk.setConfig({ font_size: value });
-          }
-        }
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ["page_title", config.page_title || defaultConfig.page_title],
-        ["page_subtitle", config.page_subtitle || defaultConfig.page_subtitle],
-        ["product1_name", config.product1_name || defaultConfig.product1_name],
-        ["product1_desc", config.product1_desc || defaultConfig.product1_desc],
-        ["product2_name", config.product2_name || defaultConfig.product2_name],
-        ["product2_desc", config.product2_desc || defaultConfig.product2_desc],
-        ["product3_name", config.product3_name || defaultConfig.product3_name],
-        ["product3_umkm", config.product3_umkm || defaultConfig.product3_umkm],
-        ["product3_desc", config.product3_desc || defaultConfig.product3_desc],
-        ["product3_price", config.product3_price || defaultConfig.product3_price],
-        ["product4_name", config.product4_name || defaultConfig.product4_name],
-        ["product4_umkm", config.product4_umkm || defaultConfig.product4_umkm],
-        ["product4_desc", config.product4_desc || defaultConfig.product4_desc],
-        ["product4_price", config.product4_price || defaultConfig.product4_price],
-        ["product5_name", config.product5_name || defaultConfig.product5_name],
-        ["product5_umkm", config.product5_umkm || defaultConfig.product5_umkm],
-        ["product5_desc", config.product5_desc || defaultConfig.product5_desc],
-        ["product5_price", config.product5_price || defaultConfig.product5_price],
-        ["product1_umkm", config.product1_umkm || defaultConfig.product1_umkm],
-        ["product1_price", config.product1_price || defaultConfig.product1_price],
-        ["product2_umkm", config.product2_umkm || defaultConfig.product2_umkm],
-        ["product2_price", config.product2_price || defaultConfig.product2_price]
-      ]);
-    }
-
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
+    function slideRight(id) {
+      const track = document.getElementById(id);
+      track.scrollBy({ left: 260, behavior: "smooth" });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ab544dcc5d114a6',t:'MTc2NTI5MTM0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</body>
+
 </html>
+
 
 
 
