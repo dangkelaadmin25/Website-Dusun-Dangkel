@@ -248,6 +248,153 @@
       <p id="welcomeMessage" class="text-lg max-w-3xl mx-auto">Kami mengucapkan selamat datang kepada seluruh masyarakat dan para pengunjung website dusun kami. Mari bersama-sama membangun desa yang lebih maju dan sejahtera.</p>
      </div>
 <br>
+<!-- ================== INFOGRAFIS DATA PENDUDUK ================== -->
+<section id="infografis" class="mt-20 mb-20">
+
+  <style>
+    .detail-animate {
+      overflow: hidden;
+      opacity: 0;
+      max-height: 0;
+      transition: all .35s ease;
+    }
+    .detail-show {
+      opacity: 1;
+      max-height: 1500px;
+    }
+    .category-active {
+      background: #3b82f6 !important;
+      color: white !important;
+      transform: scale(1.05);
+    }
+    .category-button {
+      transition: .25s ease;
+    }
+    .category-button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+
+  <div class="text-center mb-8">
+    <h1 class="text-3xl font-bold text-gray-800">Infografis Data Penduduk</h1>
+    <div class="w-20 h-1 bg-blue-500 mx-auto rounded-full mt-2"></div>
+  </div>
+
+  <!-- TOTAL -->
+  <div class="bg-white p-6 rounded-3xl shadow-xl max-w-md mx-auto mb-8 text-center">
+    <h2 class="text-gray-600 text-sm font-semibold tracking-wide">Total Penduduk</h2>
+    <p class="text-4xl font-bold text-blue-600">2,547,893</p>
+    <p class="text-gray-500 text-xs">Jiwa</p>
+  </div>
+
+  <!-- KATEGORI -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+
+    <button id="btn-gender" onclick="showDetail('gender')"
+      class="category-button bg-white shadow-lg rounded-2xl p-4 text-center">
+      <p class="text-lg font-bold text-gray-800">Kelamin</p>
+      <span class="text-xs text-gray-500">Lihat Detail</span>
+    </button>
+
+    <button id="btn-marital" onclick="showDetail('marital')"
+      class="category-button bg-white shadow-lg rounded-2xl p-4 text-center">
+      <p class="text-lg font-bold text-gray-800">Status Perkawinan</p>
+      <span class="text-xs text-gray-500">Lihat Detail</span>
+    </button>
+
+    <button id="btn-occupation" onclick="showDetail('occupation')"
+      class="category-button bg-white shadow-lg rounded-2xl p-4 text-center">
+      <p class="text-lg font-bold text-gray-800">Pekerjaan</p>
+      <span class="text-xs text-gray-500">Lihat Detail</span>
+    </button>
+
+  </div>
+
+  <!-- DETAIL -->
+  <div id="detailSection" class="detail-animate max-w-4xl mx-auto mt-6">
+    <div class="bg-white rounded-3xl shadow-xl p-6">
+      <h2 id="detailTitle" class="text-2xl font-bold text-gray-800 mb-4"></h2>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+const categoryData = {
+  gender: {
+    title: "Data Kelamin",
+    items: [
+      { label: "Laki-laki", value: "1,287,456" },
+      { label: "Perempuan", value: "1,260,437" }
+    ]
+  },
+  marital: {
+    title: "Status Perkawinan",
+    items: [
+      { label: "Belum Kawin", value: "956,342" },
+      { label: "Kawin", value: "1,423,675" },
+      { label: "Cerai", value: "167,876" }
+    ]
+  },
+  occupation: {
+    title: "Pekerjaan",
+    items: [
+      { label: "PNS", value: "234,567" },
+      { label: "Wiraswasta", value: "687,234" },
+      { label: "Karyawan Swasta", value: "543,876" },
+      { label: "Petani", value: "345,678" },
+      { label: "Pelajar/Mahasiswa", value: "456,789" },
+      { label: "Lainnya", value: "279,749" }
+    ]
+  }
+};
+
+let activeCategory = null;
+
+function showDetail(category) {
+  const sec = document.getElementById("detailSection");
+  const title = document.getElementById("detailTitle");
+  const content = document.getElementById("detailContent");
+
+  const btns = {
+    gender: document.getElementById("btn-gender"),
+    marital: document.getElementById("btn-marital"),
+    occupation: document.getElementById("btn-occupation")
+  };
+
+  if (activeCategory === category) {
+    sec.classList.remove("detail-show");
+    btns[category].classList.remove("category-active");
+    activeCategory = null;
+    return;
+  }
+
+  Object.values(btns).forEach(b => b.classList.remove("category-active"));
+  btns[category].classList.add("category-active");
+
+  const data = categoryData[category];
+  activeCategory = category;
+
+  title.textContent = data.title;
+
+  let html = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">`;
+  data.items.forEach(item => {
+    html += `
+      <div class="bg-gray-50 p-6 rounded-xl shadow text-center">
+        <h3 class="text-lg font-semibold">${item.label}</h3>
+        <p class="text-3xl font-bold text-blue-600">${item.value}</p>
+        <p class="text-xs text-gray-500">Jiwa</p>
+      </div>`;
+  });
+  html += `</div>`;
+
+  content.innerHTML = html;
+  sec.classList.add("detail-show");
+}
+</script>
+
+
 <br>
     </section><!-- Menu Navigasi Utama -->
    <section id="umkm" class="mb-16">
