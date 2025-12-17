@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+  <!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Dusun</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    .slide-in {
+      animation: slideIn 0.6s ease-out forwards;
+    }
+    
+    .carousel-slide {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    .carousel-slide.active {
+      display: block;
+    }
+    
+    .carousel-dot {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .carousel-dot.active {
+      transform: scale(1.3);
+    }
+    
+    .menu-card {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .menu-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .art-card {
+      transition: all 0.3s ease;
+    }
+    
+    .art-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .org-card {
+      transition: all 0.3s ease;
+    }
+    
+    .org-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-link:hover {
+      border-bottom-color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      #navMenu {
+        display: none !important;
+      }
+      #mobileMenuBtn {
+        display: block !important;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto"><!-- Header dengan Carousel -->
+   <header id="headerCarousel" class="relative" style="height: 500px; overflow: hidden;"><!-- Slide 1 -->
+     <div class="carousel-slide active" data-slide="1" style="height: 100%; position: relative;">
+  
+ <video autoplay muted loop playsinline 
+       style="width:100%; height:100%; object-fit:cover;">
+  <source src="https://res.cloudinary.com/dpdjuxzz3/video/upload/Pemandangan_hgcqki.mp4" type="video/mp4">
+</video>
+
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+  </div>
+     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+      <h2 id="carousel1Title" style="font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 20px;">Keindahan Alam Dusun</h2>
+      <p style="font-size: 20px; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Dikelilingi Pemandangan Hijau yang Asri</p>
+     </div>
+    </div><!-- Slide 2 -->
+    <div class="carousel-slide" data-slide="2" style="height: 100%; position: relative;">
+     
+      <video autoplay muted loop playsinline 
+       style="width:100%; height:100%; object-fit:cover;">
+  <source src="https://res.cloudinary.com/dpdjuxzz3/video/upload/Kebersamaan_lxcmcv.mp4" type="video/mp4">
+</video>
+      
+     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+      <h2 id="carousel2Title" style="font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 20px;">Kehidupan Masyarakat</h2>
+      <p style="font-size: 20px; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Harmonis dan Penuh Kekeluargaan</p>
+     </div>
+    </div><!-- Slide 3 -->
+    <div class="carousel-slide" data-slide="3" style="height: 100%; position: relative;">
+     <svg width="100%" height="100%" viewbox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice"><rect width="1200" height="500" fill="#FF9800" /> <circle cx="200" cy="250" r="80" fill="#FFB74D" opacity="0.6" /> <circle cx="250" cy="280" r="70" fill="#FFB74D" opacity="0.6" /> <circle cx="300" cy="240" r="75" fill="#FFB74D" opacity="0.6" /> <circle cx="500" cy="270" r="85" fill="#FFB74D" opacity="0.6" /> <circle cx="560" cy="250" r="75" fill="#FFB74D" opacity="0.6" /> <circle cx="620" cy="280" r="70" fill="#FFB74D" opacity="0.6" /> <circle cx="800" cy="260" r="80" fill="#FFB74D" opacity="0.6" /> <circle cx="870" cy="240" r="75" fill="#FFB74D" opacity="0.6" /> <circle cx="940" cy="270" r="70" fill="#FFB74D" opacity="0.6" /> <path d="M0 380C200 360 400 370 600 365C800 360 1000 370 1200 365V500H0V380Z" fill="#F57C00" /> <circle cx="100" cy="100" r="45" fill="#FDD835" />
+     </svg>
+     </svg>
+      <img src="https://i.ibb.co.com/TMP4qWts/Whats-App-Image-2025-12-07-at-15-42-00.jpg"
+       style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%;">
+      <h2 id="carousel3Title" style="font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 20px;">Kegiatan Bersama</h2>
+      <p style="font-size: 20px; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Membangun Kebersamaan dan Gotong Royong</p>
+     </div>
+   
+    </div><!-- Navigation Dots -->
+    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 10;"><button class="carousel-dot active" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: white;"></button> <button class="carousel-dot" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: transparent;"></button> <button class="carousel-dot" data-slide="3" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; background: transparent;"></button>
+    </div><!-- Navigation Bar -->
+    <nav style="position: absolute; top: 0; left: 0; right: 0; background: rgba(12, 179, 230, 0.2); backdrop-filter: blur(10px); z-index: 20; padding: 20px 40px;">
+     <div style="max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;"><!-- Logo & Name -->
+      <div style="display: flex; align-items: center; gap: 12px;">
+       <svg width="40" height="40" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="28" fill="white" opacity="0.3" /> <path d="M20 35L30 20L40 35H35V45H25V35H20Z" fill="white" /> <rect x="32" y="38" width="3" height="7" fill="#E0E0E0" /> <circle cx="30" cy="15" r="3" fill="#FDD835" />
+       </svg>
+       <div>
+        <h1 id="villageName" style="font-size: 18px; font-weight: bold; color: white; margin: 0; line-height: 1.2;">Dusun Dangkel</h1>
+        <p id="tagline" style="font-size: 11px; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.2;">Bersama Membangun Desa</p>
+       </div>
+      </div><!-- Navigation Links -->
+      <div id="navMenu" style="display: flex; gap: 30px; align-items: center;"><a href="umkm.html"nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">UMKM</a> <a href="#peta" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Peta</a> <a href="#organisasi" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Organisasi</a> <a href="#profil" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Profil Desa</a> <a href="#jadwal" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; font-size: 15px; transition: all 0.3s ease; padding: 8px 0; border-bottom: 2px solid transparent;">Jadwal</a>
+      </div><!-- Mobile Menu Button --> <button id="mobileMenuBtn" style="display: none; background: none; border: none; cursor: pointer;">
+       <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="6" width="30" height="3" rx="1.5" fill="white" /> <rect y="13.5" width="30" height="3" rx="1.5" fill="white" /> <rect y="21" width="30" height="3" rx="1.5" fill="white" />
+       </svg></button>
+     <!-- MENU MOBILE -->
+    <div id="mobileMenuDropdown"
+      class="hidden flex-col gap-4 mt-4 border-t border-white/20 pt-4">
+      <a href="umkm.html" class="text-white">UMKM</a>
+      <a href="#peta" class="text-white">Peta</a>
+      <a href="#organisasi" class="text-white">Organisasi</a>
+      <a href="#profil" class="text-white">Profil</a>
+      <a href="#jadwal" class="text-white">Jadwal</a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  // Mobile menu
+  const btn = document.getElementById("mobileMenuBtn");
+  const menu = document.getElementById("mobileMenuDropdown");
+
+  btn.onclick = () => {
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
+  };
+
+  // Shrink navbar on scroll
+  const nav = document.getElementById("mainNav");
+  window.addEventListener("scroll", () => {
+    if (scrollY > 60) nav.classList.add("shrink");
+    else nav.classList.remove("shrink");
+  });
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Struktur Organisasi Desa</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#38BDF8",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1A2C20",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+  <script>
+document.querySelectorAll('.accordion-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.nextElementSibling;
+    const arrow = btn.querySelector('.arrow');
+
+    content.classList.toggle('hidden');
+    arrow.classList.toggle('rotate-180');
+  });
+});
+</script>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d1b12] dark:text-[#e0eadd] antialiased min-h-screen flex flex-col">
+<div class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-100 dark:border-[#2A3C30]">
+<div class="flex items-center px-4 h-16 justify-between max-w-7xl mx-auto w-full">
+<h2 class="text-lg font-bold leading-tight flex-1 text-center pr-10 md:pr-0 text-[#0d1b12] dark:text-white">Struktur Organisasi</h2>
+<div class="w-10 hidden md:block"></div> 
+</div>
+</div>
+<main class="flex-1 w-full max-w-7xl mx-auto flex flex-col p-4 pb-20 md:p-6 lg:p-8">
+<div class="flex mb-8 justify-center">
+</div>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
+<div class="flex flex-col items-center w-full lg:w-1/3 lg:sticky lg:top-24">
+<div class="relative w-full max-w-md">
+<div class="flex flex-col items-center bg-surface-light dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-[#2A3C30] relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-primary/10 to-transparent"></div>
+<div class="relative z-10 mb-4">
+<div class="w-48 h-48 rounded-full border-4 border-white dark:border-[#2A3C30] shadow-md overflow-hidden bg-gray-200">
+<img alt="Bpk. Ahmad Sujatmiko" class="w-full h-full object-cover" data-alt="Portrait of Village Head Ahmad Sujatmiko smiling professionally" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg0cwiZcIcLPQFjVTsjCEtN0HAN99rf6jNA5GAi93cNm-ATQRvwapLrksmVGQC96pkD2wmM4QCTvTBnjO5a_UYn_k1jOW4eSZptueSa-YIsMI8ZgfD83EYxQv4dKhAD7OqSL8HIWA9QoYrMnsNTGKbKdo2egE1FyhsuN2b47byJclkC2_kS4SzUomAoFgHM8ykVn0TZL8TsToOF1BqXh653-C_VBZg843gLZ2zJK2WKD73zQktYZJXMiw1uz5rrmWg3cRS6HnkyM49"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-[#0d1b12] rounded-full p-1.5 border-2 border-white dark:border-[#2A3C30] shadow-sm">
+</div>
+</div>
+<div class="text-center mb-4 z-10">
+<h3 class="text-xl font-bold text-[#0d1b12] dark:text-white leading-tight mb-1">Lestari</h3>
+<p class="text-primary font-medium text-sm uppercase tracking-wide">Kepala Desa</p>
+</div>
+<div class="grid grid-cols-2 gap-3 w-full z-10">
+</div>
+</div>
+</div>
+<div class="h-8 w-0.5 bg-gray-300 dark:bg-gray-600 my-1 lg:h-12"></div>
+<div class="w-full max-w-[280px]">
+<div class="flex items-center gap-3 bg-surface-light dark:bg-surface-dark p-3 rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 bg-gray-200">
+<img class="w-full h-full object-cover" data-alt="Portrait of Village Secretary Ibu Siti Aminah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkI78jS42eEJO1wT5KVkkIcqlml_SSCTJfMdWMR7YteXBSSaaMRt0gzE8xCbNkWYTH4kcixdmv6CAZDuqCBgtm1r32GewGuRYnZL8VU34AJ9-3K2HVm_4ttyQtmAcp_pk4rRAc9hEvyYGK26T7-5WFVY8npx2gTWvv8XDzNGqJar5qUdok5UEYvJhIkd0tW6Yt3RHo6lzWfo1SlNE-Xtseg9KJLDnnFgTkCZT4jFAr0rEE7B_0wRKBCcmqODjHKaXoX1bbof3ANAeW"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white truncate">Arif Budi Kurniawan</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Sekretaris Desa</p>
+</div>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-center w-full lg:hidden">
+<div class="h-6 w-0.5 bg-gray-300 dark:bg-gray-600"></div>
+<div class="h-0.5 w-1/2 bg-gray-300 dark:bg-gray-600 relative">
+<div class="absolute left-0 top-0 h-4 w-0.5 bg-gray-300 dark:bg-gray-600 transform translate-y-[1px]"></div>
+<div class="absolute right-0 top-0 h-4 w-0.5 bg-gray-300 dark:bg-gray-600 transform translate-y-[1px]"></div>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full lg:w-2/3 flex flex-col gap-8">
+<div class="mt-4 lg:mt-0">
+<h3 class="text-[#0d1b12] dark:text-white text-lg font-bold mb-4 px-1 lg:text-xl lg:mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">badge</span>
+                        Kepala Urusan &amp; Seksi
+                    </h3>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-4">
+<div class="flex flex-col items-center bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] hover:shadow-md transition-all hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mb-2 ring-2 ring-offset-2 ring-transparent group-hover:ring-primary/20 dark:ring-offset-[#1A2C20]">
+<img class="w-full h-full object-cover" data-alt="Portrait of Head of Finance Budi Santoso" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxKu_LtDt1SRag9E6ilupWL90BmSWaWNTR2JJgr5R7KTjYYY9vDrWJBelVHEuvpxROpp6XO44_wGinJC4bEvClLxH6RjSPkFWCv6K8tgZvoSFMi6sXO5v9PJSXpTYAXbJakb-DMrD37x7XPLVd0b7ctTMmnxXyHZkbpR8Nhe4ZiNhFK0IZhlkuooMftu36WeWJhny7HiDmlWKk8_Of3D_0793Zn662Pd8JajplRoE-0vfw-BMJ_u44dGHN7eGvGWgMqBmGLluQ_7e"/>
+</div>
+<div class="text-center w-full">
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white truncate w-full"> Tejo Santosa </p>
+<p class="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wide mt-0.5">Kasi Pemerintahan </p>
+</div>
+
+</div>
+<div class="flex flex-col items-center bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] hover:shadow-md transition-all hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mb-2">
+<img class="w-full h-full object-cover" data-alt="Portrait of Head of Planning Rina Wati" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzQAdUTMf2RtEYtpRJFUb01aDqmYr3nr5CHIJm2vE3zm2X2WwK-Xq6NBDXFi7OaY2jwYam2dKXMnhSWHfkh6TAnWP9er7cZgX92rj8i0j_1_eiKhnIagJWoPlxSdbeBICqbRV48FLIvz_Xw6dCt77AHsKiOyphy2h1KVW3hU6RM_exRyt7lsXgvBgm4W_T0HyEDSp0fEfx1y5r6vNdr-ZeO_8wXCCZ08lF3C6z8BHwB9-b83zfCE9CGARbIn_pk_YTNQf32lCRNb6E"/>
+</div>
+<div class="text-center w-full">
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white truncate w-full">Muhajirin</p>
+<p class="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wide mt-0.5">Kasi kesejahteraan dan pelayanan</p>
+</div>
+
+</div>
+<div class="flex flex-col items-center bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] hover:shadow-md transition-all hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mb-2">
+<img class="w-full h-full object-cover" data-alt="Portrait of Head of Planning Rina Wati" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzQAdUTMf2RtEYtpRJFUb01aDqmYr3nr5CHIJm2vE3zm2X2WwK-Xq6NBDXFi7OaY2jwYam2dKXMnhSWHfkh6TAnWP9er7cZgX92rj8i0j_1_eiKhnIagJWoPlxSdbeBICqbRV48FLIvz_Xw6dCt77AHsKiOyphy2h1KVW3hU6RM_exRyt7lsXgvBgm4W_T0HyEDSp0fEfx1y5r6vNdr-ZeO_8wXCCZ08lF3C6z8BHwB9-b83zfCE9CGARbIn_pk_YTNQf32lCRNb6E"/>
+</div>
+<div class="text-center w-full">
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white truncate w-full"> Slamet Solehan </p>
+<p class="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wide mt-0.5"> Kaur Keuangan </p>
+</div>
+
+</div>
+<div class="flex flex-col items-center bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] hover:shadow-md transition-all hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mb-2">
+<img class="w-full h-full object-cover" data-alt="Portrait of Head of Planning Rina Wati" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzQAdUTMf2RtEYtpRJFUb01aDqmYr3nr5CHIJm2vE3zm2X2WwK-Xq6NBDXFi7OaY2jwYam2dKXMnhSWHfkh6TAnWP9er7cZgX92rj8i0j_1_eiKhnIagJWoPlxSdbeBICqbRV48FLIvz_Xw6dCt77AHsKiOyphy2h1KVW3hU6RM_exRyt7lsXgvBgm4W_T0HyEDSp0fEfx1y5r6vNdr-ZeO_8wXCCZ08lF3C6z8BHwB9-b83zfCE9CGARbIn_pk_YTNQf32lCRNb6E"/>
+</div>
+<div class="text-center w-full">
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white truncate w-full">Rahayu Fatmawati</p>
+<p class="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wide mt-0.5"> Kaur Umum</p>
+</div>
+
+</div>
+<div class="flex flex-col items-center bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] hover:shadow-md transition-all hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mb-2">
+<img class="w-full h-full object-cover" data-alt="Portrait of Head of Government Joko Anwar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7zeNq7jF_PVzEMJ3PCALQjvn5utyPDMAXTEctjq2M8iHxKUPjJcMxibDRmE7t0IkGCJEuDBPKCzWh_tnyBv5ps8lX5B65TAGWKSn_evEmGMcu-IvD9ak0T97x0Nq8g-j58BLUw63q_rf9DEQxpwA4WHRoslxtNki-fE0DTaVNghyxU52GCGfBMshEY-dOvE1ngt9mhuVh1NUVK5GmOiIoAOz5Og6e3ZN8q75dZXq7w3j4XZQ5BTm3Kgj4VEJ3GxtUOhszi10vYU5k"/>
+</div>
+<div class="text-center w-full">
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white truncate w-full"> Mareta Ira Wardani </p>
+<p class="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wide mt-0.5">Kaur perencanaan </p>
+</div>
+
+</div>
+<div class="flex flex-col items-center bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] hover:shadow-md transition-all hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mb-2">
+<img class="w-full h-full object-cover" data-alt="Portrait of Head of Welfare Dewi Sartika" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCejlUpMKGt27iezTXjG_hK430jYNMetcFqN8WjGWEH7D06FizIdkkeR03bUfj0GEfIi0KJ1wM-kVC0jlcNIwYKDMqmx6XCmYuMnCjQoFZlxUxb4Yb-Jb6AHK6KZaiK8zWjcHcRKZ3Eq1M3ZuVngQeEHVf8jX36rpaNHjcX4fxJa5ziZMAS9GbJ88tEYIQ1yEuAm0-ePWtJxgbIryE51sDQT36jR1S9ydFaidy78ZqGCEudpAVVU80lNBqz3njqMH9kAL1bGYejbUcL"/>
+</div>
+<div class="text-center w-full">
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white truncate w-full"> Musta'in </p>
+<p class="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wide mt-0.5"> Kepala Dusun Dangkel </p>
+</div>
+</div>
+<div class="flex flex-col items-center bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] hover:shadow-md transition-all hover:-translate-y-1">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-gray-200 mb-2">
+<img class="w-full h-full object-cover" data-alt="Portrait of Head of Welfare Dewi Sartika" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCejlUpMKGt27iezTXjG_hK430jYNMetcFqN8WjGWEH7D06FizIdkkeR03bUfj0GEfIi0KJ1wM-kVC0jlcNIwYKDMqmx6XCmYuMnCjQoFZlxUxb4Yb-Jb6AHK6KZaiK8zWjcHcRKZ3Eq1M3ZuVngQeEHVf8jX36rpaNHjcX4fxJa5ziZMAS9GbJ88tEYIQ1yEuAm0-ePWtJxgbIryE51sDQT36jR1S9ydFaidy78ZqGCEudpAVVU80lNBqz3njqMH9kAL1bGYejbUcL"/>
+</div>
+<div class="text-center w-full">
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white truncate w-full"> Nur Faizim </p>
+<p class="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wide mt-0.5"> Kepala Dusun Tegalrejo </p>
+</div>
+
+
+
+</div>
+
+</div>
+</div>
+<div class="mt-4 lg:mt-0">
+<h3 class="text-[#0d1b12] dark:text-white text-lg font-bold mb-4 px-1 lg:text-xl lg:mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">diversity_3</span>
+
+                        Ketua RW dan RT Dusun Dangkel periode 2025-2026
+                    </h3>
+<div class="flex flex-col md:grid md:grid-cols-2 gap-3 lg:gap-4">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] overflow-hidden md:col-span-2 lg:col-span-1 h-fit">
+<button class="flex items-center justify-between w-full p-4 text-left bg-gray-50/50 dark:bg-[#1f3426] hover:bg-gray-100 dark:hover:bg-[#253e2d] transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">groups</span>
+</div>
+<span class="font-bold text-[#0d1b12] dark:text-white"> RW </span>
+</div>
+<div class="p-4 pt-2">
+<div class="flex items-center gap-3 py-2 border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition-colors -mx-2">
+<div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="BPD Chairman portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW8zvpTVAl1b3GqU1OHTSXa8B-FdLp2A3NKpUPq_0G0bdRH2QtYsvd1MoWsTSyF2FAZ0pudI7QgxIW9zUmmM5ozUqKlyF6V-P4YF-LmJlHV7sSPaR0Iio4FAOJlbo5zVa4woLAFM1yhlOxofXF2WEvpUJPzZKNXjP5RJjdNpnpoNHIFlZBSJ1symPO6AvTQm7y4G4Q5WaIrnWLOvq7cKf9Rjc4Bxng_fjyBxilaeID_co8gELVgrf6oa5-ssWqHUR-ePS6nEVriT49"/>
+</div>
+<div>
+<p class="text-sm font-bold text-[#0d1b12] dark:text-white"> Subandiyo </p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Ketua RW 1 </p>
+</div>
+</div>
+
+<div class="flex flex-col md:grid md:grid-cols-2 gap-3 lg:gap-4">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-[#2A3C30] overflow-hidden md:col-span-2 lg:col-span-1 h-fit">
+<button class="flex items-center justify-between w-full p-4 text-left bg-gray-50/50 dark:bg-[#1f3426] hover:bg-gray-100 dark:hover:bg-[#253e2d] transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">groups</span>
+</div>
+<span class="font-bold text-[#0d1b12] dark:text-white"> RT  </span>
+<div class="p-4 pt-2">
+
+  <!-- RT 1 -->
+  <div class="flex items-center gap-3 py-2 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition-colors -mx-2">
+    <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+      <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW8zvpTVAl1b3GqU1OHTSXa8B-FdLp2A3NKpUPq_0G0bdRH2QtYsvd1MoWsTSyF2FAZ0pudI7QgxIW9zUmmM5ozUqKlyF6V-P4YF-LmJlHV7sSPaR0Iio4FAOJlbo5zVa4woLAFM1yhlOxofXF2WEvpUJPzZKNXjP5RJjdNpnpoNHIFlZBSJ1symPO6AvTQm7y4G4Q5WaIrnWLOvq7cKf9Rjc4Bxng_fjyBxilaeID_co8gELVgrf6oa5-ssWqHUR-ePS6nEVriT49">
+    </div>
+    <div>
+      <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Slamet Sumaryono</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Ketua RT 1</p>
+    </div>
+  </div>
+
+  <!-- RT 2 -->
+  <div class="flex items-center gap-3 py-2 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition-colors -mx-2">
+    <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+      <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBWvqOzmlEpmp-JTXEggEsgQlY-zFmitybJraYzQaVD2FntA-qTmQFPASLfUYIVI1lr-9bogcF3w2zStyC7FaoHOmPf4vosLuneVAp3vaUVhwY5-uRIuDzPzic0z2wAvauzGU2UG13bgGpmxtxTc0PlIA1a44Xqh9mgFJuxxeV32Ip0kzD7KvImHd5m-SM77yayG7O7VKNSo3twW3xMOy1oTGWx8kEEYICH4flnKazmMV6Qe9dfh8whP49zc0T5VuMVMNppxwzN_k1">
+    </div>
+    <div>
+      <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Suyoko</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Ketua RT 2</p>
+    </div>
+  </div>
+
+  <!-- RT 3 -->
+  <div class="flex items-center gap-3 py-2 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition-colors -mx-2">
+    <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+      <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBWvqOzmlEpmp-JTXEggEsgQlY-zFmitybJraYzQaVD2FntA-qTmQFPASLfUYIVI1lr-9bogcF3w2zStyC7FaoHOmPf4vosLuneVAp3vaUVhwY5-uRIuDzPzic0z2wAvauzGU2UG13bgGpmxtxTc0PlIA1a44Xqh9mgFJuxxeV32Ip0kzD7KvImHd5m-SM77yayG7O7VKNSo3twW3xMOy1oTGWx8kEEYICH4flnKazmMV6Qe9dfh8whP49zc0T5VuMVMNppxwzN_k1">
+    </div>
+    <div>
+      <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Budiyanto</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Ketua RT 3</p>
+    </div>
+  </div>
+
+  <!-- RT 4 -->
+  <div class="flex items-center gap-3 py-2 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition-colors -mx-2">
+    <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+      <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBWvqOzmlEpmp-JTXEggEsgQlY-zFmitybJraYzQaVD2FntA-qTmQFPASLfUYIVI1lr-9bogcF3w2zStyC7FaoHOmPf4vosLuneVAp3vaUVhwY5-uRIuDzPzic0z2wAvauzGU2UG13bgGpmxtxTc0PlIA1a44Xqh9mgFJuxxeV32Ip0kzD7KvImHd5m-SM77yayG7O7VKNSo3twW3xMOy1oTGWx8kEEYICH4flnKazmMV6Qe9dfh8whP49zc0T5VuMVMNppxwzN_k1">
+    </div>
+    <div>
+      <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Ahmad Adi Yuliono</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Ketua RT 4</p>
+    </div>
+  </div>
+
+  <!-- RT 5 -->
+  <div class="flex items-center gap-3 py-2 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition-colors -mx-2">
+    <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+      <img class="w-full h-full object-cover" src="https://via.placeholder.com/100">
+    </div>
+    <div>
+      <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Hadi Susanto</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Ketua RT 5</p>
+    </div>
+  </div>
+
+  <!-- RT 6 -->
+  <div class="flex items-center gap-3 py-2 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition-colors -mx-2">
+    <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+      <img class="w-full h-full object-cover" src="https://via.placeholder.com/100">
+    </div>
+    <div>
+      <p class="text-sm font-bold text-[#0d1b12] dark:text-white"> Muh Cholil</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Ketua RT 6</p>
+    </div>
+  </div>
+
+  <!-- RT 7 -->
+  <div class="flex items-center gap-3 py-2 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition-colors -mx-2">
+    <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+      <img class="w-full h-full object-cover" src="https://via.placeholder.com/100">
+    </div>
+    <div>
+      <p class="text-sm font-bold text-[#0d1b12] dark:text-white"> Sugiyanto </p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Ketua RT 7</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+</div>
+</div>
+<div class="mt-4 lg:mt-0">
+<h3 class="text-[#0d1b12] dark:text-white text-lg font-bold mb-4 px-1 lg:text-xl lg:mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">diversity_3</span>
+
+                       <h3 class="text-2xl font-bold text-sky-700 mb-6">
+  Organisasi Masyarakat Dusun Dangkel
+</h3>
+
+<div class="grid md:grid-cols-2 gap-4">
+
+  <!-- ================= SATGAS LINMAS ================= -->
+  <div class="bg-white dark:bg-[#1b2f24] rounded-xl shadow border border-gray-100 dark:border-[#2A3C30] overflow-hidden">
+
+    <div class="flex items-center gap-3 p-4 bg-gray-50 dark:bg-[#1f3426]">
+      <div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+        <span class="material-symbols-outlined text-lg">groups</span>
+      </div>
+      <span class="font-bold text-[#0d1b12] dark:text-white">
+        Satgas Linmas
+      </span>
+    </div>
+
+    <div class="p-4">
+      <div class="flex items-center gap-3 py-2 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 transition">
+        <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW8zvpTVAl1b3GqU1OHTSXa8B-FdLp2A3NKpUPq_0G0bdRH2QtYsvd1MoWsTSyF2FAZ0pudI7QgxIW9zUmmM5ozUqKlyF6V-P4YF-LmJlHV7sSPaR0Iio4FAOJlbo5zVa4woLAFM1yhlOxofXF2WEvpUJPzZKNXjP5RJjdNpnpoNHIFlZBSJ1symPO6AvTQm7y4G4Q5WaIrnWLOvq7cKf9Rjc4Bxng_fjyBxilaeID_co8gELVgrf6oa5-ssWqHUR-ePS6nEVriT49">
+        </div>
+        <div>
+          <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Lestari</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Kepala Satlinmas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BPD ================= -->
+  <div class="bg-white dark:bg-[#1b2f24] rounded-xl shadow border border-gray-100 dark:border-[#2A3C30] overflow-hidden">
+
+    <div class="flex items-center gap-3 p-4 bg-gray-50 dark:bg-[#1f3426]">
+      <div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+        <span class="material-symbols-outlined text-lg">groups</span>
+      </div>
+      <span class="font-bold text-[#0d1b12] dark:text-white">
+        BPD
+      </span>
+    </div>
+
+    <div class="p-4 space-y-2">
+
+      <div class="flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 py-2 transition">
+        <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW8zvpTVAl1b3GqU1OHTSXa8B-FdLp2A3NKpUPq_0G0bdRH2QtYsvd1MoWsTSyF2FAZ0pudI7QgxIW9zUmmM5ozUqKlyF6V-P4YF-LmJlHV7sSPaR0Iio4FAOJlbo5zVa4woLAFM1yhlOxofXF2WEvpUJPzZKNXjP5RJjdNpnpoNHIFlZBSJ1symPO6AvTQm7y4G4Q5WaIrnWLOvq7cKf9Rjc4Bxng_fjyBxilaeID_co8gELVgrf6oa5-ssWqHUR-ePS6nEVriT49">
+        </div>
+        <div>
+          <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Bpk. Hartono</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Ketua</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 py-2 transition">
+        <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBWvqOzmlEpmp-JTXEggEsgQlY-zFmitybJraYzQaVD2FntA-qTmQFPASLfUYIVI1lr-9bogcF3w2zStyC7FaoHOmPf4vosLuneVAp3vaUVhwY5-uRIuDzPzic0z2wAvauzGU2UG13bgGpmxtxTc0PlIA1a44Xqh9mgFJuxxeV32Ip0kzD7KvImHd5m-SM77yayG7O7VKNSo3twW3xMOy1oTGWx8kEEYICH4flnKazmMV6Qe9dfh8whP49zc0T5VuMVMNppxwzN_k1">
+        </div>
+        <div>
+          <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Ibu Sri Wahyuni</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Wakil Ketua</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= PKK ================= -->
+  <div class="bg-white dark:bg-[#1b2f24] rounded-xl shadow border border-gray-100 dark:border-[#2A3C30] overflow-hidden md:col-span-2">
+
+    <div class="flex items-center gap-3 p-4 bg-gray-50 dark:bg-[#1f3426]">
+      <div class="size-8 rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 flex items-center justify-center">
+        <span class="material-symbols-outlined text-lg">volunteer_activism</span>
+      </div>
+      <span class="font-bold text-[#0d1b12] dark:text-white">
+        PKK
+      </span>
+    </div>
+
+    <div class="p-4 space-y-2">
+
+      <div class="flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 py-2 transition">
+        <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW8zvpTVAl1b3GqU1OHTSXa8B-FdLp2A3NKpUPq_0G0bdRH2QtYsvd1MoWsTSyF2FAZ0pudI7QgxIW9zUmmM5ozUqKlyF6V-P4YF-LmJlHV7sSPaR0Iio4FAOJlbo5zVa4woLAFM1yhlOxofXF2WEvpUJPzZKNXjP5RJjdNpnpoNHIFlZBSJ1symPO6AvTQm7y4G4Q5WaIrnWLOvq7cKf9Rjc4Bxng_fjyBxilaeID_co8gELVgrf6oa5-ssWqHUR-ePS6nEVriT49">
+        </div>
+        <div>
+          <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Saidah</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Ketua</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-[#1f3426] rounded-lg px-2 py-2 transition">
+        <div class="size-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBWvqOzmlEpmp-JTXEggEsgQlY-zFmitybJraYzQaVD2FntA-qTmQFPASLfUYIVI1lr-9bogcF3w2zStyC7FaoHOmPf4vosLuneVAp3vaUVhwY5-uRIuDzPzic0z2wAvauzGU2UG13bgGpmxtxTc0PlIA1a44Xqh9mgFJuxxeV32Ip0kzD7KvImHd5m-SM77yayG7O7VKNSo3twW3xMOy1oTGWx8kEEYICH4flnKazmMV6Qe9dfh8whP49zc0T5VuMVMNppxwzN_k1">
+        </div>
+        <div>
+          <p class="text-sm font-bold text-[#0d1b12] dark:text-white">Hj. Tuminem</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Sekretaris</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
