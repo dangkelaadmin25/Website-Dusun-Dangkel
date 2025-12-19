@@ -317,18 +317,6 @@
       <span class="text-xs text-gray-500">Lihat Detail</span>
     </button>
 
-    <button id="btn-marital" onclick="showDetail('marital')"
-      class="category-button bg-white shadow-lg rounded-2xl p-4 text-center">
-      <p class="text-lg font-bold text-gray-800">Status Perkawinan</p>
-      <span class="text-xs text-gray-500">Lihat Detail</span>
-    </button>
-
-    <button id="btn-occupation" onclick="showDetail('occupation')"
-      class="category-button bg-white shadow-lg rounded-2xl p-4 text-center">
-      <p class="text-lg font-bold text-gray-800">Pekerjaan</p>
-      <span class="text-xs text-gray-500">Lihat Detail</span>
-    </button>
-
   </div>
 
   <!-- DETAIL -->
@@ -350,23 +338,6 @@ const categoryData = {
       { label: "Perempuan", value: "938" }
     ]
   },
-  marital: {
-    title: "Status Perkawinan",
-    items: [
-      { label: "Belum Kawin", value: "956,342" },
-      { label: "Kawin", value: "1,423,675" },
-      { label: "Cerai", value: "167,876" }
-    ]
-  },
-  occupation: {
-    title: "Pekerjaan",
-    items: [
-      { label: "PNS", value: "234,567" },
-      { label: "Wiraswasta", value: "687,234" },
-      { label: "Karyawan Swasta", value: "543,876" },
-      { label: "Petani", value: "345,678" },
-      { label: "Pelajar/Mahasiswa", value: "456,789" },
-      { label: "Lainnya", value: "279,749" }
     ]
   }
 };
@@ -489,7 +460,7 @@ function showDetail(category) {
 
       <h3 class="card-title text-xl font-bold mb-2">Organisasi</h3>
       <p class="card-text text-sm mb-4">Struktur organisasi dusun</p>
-      <button class="btn-primary px-6 py-2 rounded-lg font-semibold">Lihat Struktur</button>
+       <a href="organisasi.html" class="btn-primary px-6 py-2 rounded-lg font-semibold">Lihat Struktur</a>
     </div>
 
 
@@ -577,16 +548,16 @@ setInterval(kontakNext, 3000);
         <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="60" cy="60" r="55" fill="#E91E63" opacity="0.1" /> <path d="M40 80C40 70 45 60 50 55C55 50 60 45 60 35C60 45 65 50 70 55C75 60 80 70 80 80" stroke="#E91E63" stroke-width="4" fill="none" /> <circle cx="40" cy="80" r="8" fill="#E91E63" /> <circle cx="80" cy="80" r="8" fill="#E91E63" /> <path d="M35 50L60 35L85 50" stroke="#E91E63" stroke-width="3" fill="none" /> <circle cx="60" cy="25" r="6" fill="#E91E63" />
         </svg>
        </div>
-       <h3 id="art1Name" class="art-title text-xl font-bold mb-3">Tari Tradisional</h3>
-       <p class="art-desc text-sm">Tarian khas dusun yang dilestarikan turun-temurun dengan gerakan yang indah dan penuh makna</p>
+       <h3 id="art1Name" class="art-title text-xl font-bold mb-3">Warok</h3>
+       <p class="art-desc text-sm">Warok adalah seni yang menggabungkan tari, musik, dan drama dengan unsur spiritual, kanuragan, dan filosofi hidup luhur, digambarkan dengan sosok bertubuh besar, berjanggut lebat, berkumis, memakai busana hitam</p>
       </div><!-- Kesenian 2 -->
       <div class="art-card rounded-2xl shadow-xl p-8 text-center">
        <div class="mb-6">
         <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="60" cy="60" r="55" fill="#FF9800" opacity="0.1" /> <ellipse cx="60" cy="60" rx="35" ry="15" fill="#FF9800" /> <ellipse cx="60" cy="50" rx="30" ry="12" fill="#FFA726" /> <ellipse cx="60" cy="40" rx="25" ry="10" fill="#FFB74D" /> <circle cx="60" cy="32" r="8" fill="#FDD835" /> <rect x="45" y="65" width="6" height="25" rx="3" fill="#8D6E63" /> <rect x="69" y="65" width="6" height="25" rx="3" fill="#8D6E63" />
         </svg>
        </div>
-       <h3 id="art2Name" class="art-title text-xl font-bold mb-3">Musik Gamelan</h3>
-       <p class="art-desc text-sm">Ensemble musik tradisional dengan perpaduan bunyi yang harmonis dan menenangkan</p>
+       <h3 id="art2Name" class="art-title text-xl font-bold mb-3">Kuda lumping</h3>
+       <p class="art-desc text-sm">Kesenian Kuda Lumpingadalah tarian tradisional Jawa yang menggambarkan prajurit berkuda, menggunakan kuda tiruan dari anyaman bambu, diiringi musik gamelan</p>
       </div><!-- Kesenian 3 -->
       <div class="art-card rounded-2xl shadow-xl p-8 text-center">
        <div class="mb-6">
@@ -605,7 +576,7 @@ setInterval(kontakNext, 3000);
         <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto"><circle cx="30" cy="30" r="28" fill="#4CAF50" opacity="0.2" /> <circle cx="30" cy="25" r="8" fill="#4CAF50" /> <path d="M30 35C22 35 15 39 15 45V50H45V45C45 39 38 35 30 35Z" fill="#4CAF50" />
         </svg>
        </div>
-       <h3 class="stat-number text-3xl font-bold mb-1">2,450</h3>
+       <h3 class="stat-number text-3xl font-bold mb-1">1,922</h3>
        <p class="stat-label text-sm">Total Penduduk</p>
       </div>
       <div class="stat-box text-center p-8 rounded-xl shadow-lg">
@@ -1175,6 +1146,7 @@ setInterval(kontakNext, 3000);
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9abb057a1272b5ee',t:'MTc2NTM1MTY2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
+
 
 
 
