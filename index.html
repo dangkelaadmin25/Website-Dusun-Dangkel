@@ -337,8 +337,6 @@ const categoryData = {
       { label: "Laki-laki", value: "984" },
       { label: "Perempuan", value: "938" }
     ]
-  },
-    ]
   }
 };
 
@@ -348,36 +346,31 @@ function showDetail(category) {
   const sec = document.getElementById("detailSection");
   const title = document.getElementById("detailTitle");
   const content = document.getElementById("detailContent");
+  const btn = document.getElementById("btn-gender");
 
-  const btns = {
-    gender: document.getElementById("btn-gender"),
-    marital: document.getElementById("btn-marital"),
-    occupation: document.getElementById("btn-occupation")
-  };
-
+  // toggle tutup
   if (activeCategory === category) {
     sec.classList.remove("detail-show");
-    btns[category].classList.remove("category-active");
+    btn.classList.remove("category-active");
     activeCategory = null;
     return;
   }
 
-  Object.values(btns).forEach(b => b.classList.remove("category-active"));
-  btns[category].classList.add("category-active");
-
-  const data = categoryData[category];
+  btn.classList.add("category-active");
   activeCategory = category;
 
+  const data = categoryData[category];
   title.textContent = data.title;
 
-  let html = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">`;
+  let html = `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">`;
   data.items.forEach(item => {
     html += `
-      <div class="bg-gray-50 p-6 rounded-xl shadow text-center">
+      <div class="bg-gray-50 p-6 rounded-xl shadow text-center hover:scale-105 transition">
         <h3 class="text-lg font-semibold">${item.label}</h3>
         <p class="text-3xl font-bold text-blue-600">${item.value}</p>
         <p class="text-xs text-gray-500">Jiwa</p>
-      </div>`;
+      </div>
+    `;
   });
   html += `</div>`;
 
@@ -1146,6 +1139,7 @@ setInterval(kontakNext, 3000);
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9abb057a1272b5ee',t:'MTc2NTM1MTY2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
+
 
 
 
